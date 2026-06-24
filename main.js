@@ -2,13 +2,20 @@
 (function () {
   'use strict';
 
-  /* Sticky header state */
+  /* Sticky header + scroll progress bar */
   var header = document.querySelector('.site-header');
+  var bar = document.createElement('div');
+  bar.className = 'scroll-progress';
+  document.body.appendChild(bar);
+
   function onScroll() {
-    if (!header) return;
-    header.classList.toggle('scrolled', window.scrollY > 24);
+    if (header) header.classList.toggle('scrolled', window.scrollY > 24);
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - doc.clientHeight;
+    bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
   }
   window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
   onScroll();
 
   /* Mobile nav */
@@ -23,7 +30,7 @@
       nav.classList.toggle('open', open);
       header.classList.toggle('menu-open', open);
       overlay.classList.toggle('show', open);
-      document.body.classList.toggle('menu-open', open);
+      document.documentElement.style.overflow = open ? 'hidden' : '';
       toggle.setAttribute('aria-expanded', open);
     }
 

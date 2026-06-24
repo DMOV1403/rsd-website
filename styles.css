@@ -40,7 +40,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; overflow-x: clip; }
 
 body {
   background: var(--obsidian);
@@ -48,12 +48,24 @@ body {
   font-weight: 400;
   line-height: 1.6;
   font-size: 16px;
-  overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
-body.menu-open { overflow: hidden; }
 img { max-width: 100%; }
+
+/* Anchor targets clear the fixed header */
+[id] { scroll-margin-top: 6rem; }
+
+/* Keyboard focus, on-brand */
+:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 2px; }
+:focus:not(:focus-visible) { outline: none; }
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 200;
+  background: linear-gradient(90deg, var(--red), var(--teal));
+  transition: width .1s linear; pointer-events: none;
+}
 
 /* ----------------------------------------------------------- Typography */
 h1, h2, h3, h4 { font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; }
