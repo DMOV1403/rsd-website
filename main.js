@@ -15,16 +15,25 @@
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.querySelector('.nav');
   if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
+    var overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+
+    function setMenu(open) {
+      nav.classList.toggle('open', open);
       header.classList.toggle('menu-open', open);
+      overlay.classList.toggle('show', open);
+      document.body.classList.toggle('menu-open', open);
       toggle.setAttribute('aria-expanded', open);
-    });
+    }
+
+    toggle.addEventListener('click', function () { setMenu(!nav.classList.contains('open')); });
+    overlay.addEventListener('click', function () { setMenu(false); });
     nav.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        nav.classList.remove('open');
-        header.classList.remove('menu-open');
-      });
+      a.addEventListener('click', function () { setMenu(false); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setMenu(false);
     });
   }
 
