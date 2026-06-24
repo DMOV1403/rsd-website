@@ -1,4 +1,4 @@
-/* RSD — shared interactions. Minimal motion, progressive enhancement. */
+/* RSD shared interactions. Minimal motion, progressive enhancement. */
 (function () {
   'use strict';
 
@@ -61,14 +61,14 @@
     p.addEventListener('click', function () { p.classList.toggle('open'); });
   });
 
-  /* Contact form — demo only, no backend wired yet */
+  /* Contact form: demo only, no backend wired yet */
   var form = document.querySelector('.contact-form');
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var note = form.querySelector('.form-note');
       if (note) {
-        note.textContent = 'Thank you. This is a draft form — connect it to email or a form service before launch.';
+        note.textContent = 'Thank you. This is a draft form. Connect it to email or a form service before launch.';
         note.style.color = '#7c9bff';
       }
       form.reset();
