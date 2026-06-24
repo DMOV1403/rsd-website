@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — RSD</title>
+  <meta name="description" content="Get in touch with RSD. Contact form, email, phone, office address and LinkedIn.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/rsd-logo-ivory.png">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="RSD home">
+      <img src="assets/rsd-logo-ivory.png" alt="RSD — Where Vision Builds">
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="what-we-do.html">What We Do</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html" class="btn" aria-current="page">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="section page-hero">
+    <div class="wrap">
+      <p class="eyebrow reveal in">Contact</p>
+      <h1 class="reveal in" data-delay="1">Let's talk.</h1>
+      <p class="reveal in" data-delay="2">A name, a message, an address. If you'd like to get in touch, it's straightforward.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap contact-grid">
+
+      <form class="contact-form reveal">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send message</button>
+        <p class="form-note" style="margin-top:1rem; font-size:0.85rem; min-height:1.2em"></p>
+      </form>
+
+      <aside class="reveal" data-delay="1">
+        <div class="contact-detail">
+          <span class="lbl">Email</span>
+          <a href="mailto:hello@rsd.services">hello@rsd.services</a>
+        </div>
+        <div class="contact-detail">
+          <span class="lbl">Phone</span>
+          <a href="tel:+96800000000">+968 0000 0000</a>
+        </div>
+        <div class="contact-detail">
+          <span class="lbl">Office</span>
+          <p>Muscat, Sultanate of Oman</p>
+        </div>
+        <div class="contact-detail">
+          <span class="lbl">LinkedIn</span>
+          <a href="#" target="_blank" rel="noopener">RSD company page →</a>
+        </div>
+        <p style="margin-top:1.5rem; font-size:0.82rem; color:var(--ivory-faint)">Contact details are placeholders — replace with live email, phone, address and LinkedIn URL before launch.</p>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <img src="assets/rsd-logo-ivory.png" alt="RSD">
+          <p>Where vision builds. A multi-sector company across mining, investment and industrial technology.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="what-we-do.html">What We Do</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Connect</h5>
+          <a href="mailto:hello@rsd.services">hello@rsd.services</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 RSD. All rights reserved.</span>
+        <span>Where Vision Builds</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

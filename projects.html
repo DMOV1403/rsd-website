@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — RSD</title>
+  <meta name="description" content="RSD's portfolio of projects across mining, investment and industrial technology. Filter by sector.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/rsd-logo-ivory.png">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="RSD home">
+      <img src="assets/rsd-logo-ivory.png" alt="RSD — Where Vision Builds">
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="what-we-do.html">What We Do</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="contact.html" class="btn">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="section page-hero">
+    <div class="wrap">
+      <p class="eyebrow reveal in">Projects</p>
+      <h1 class="reveal in" data-delay="1">Work, named plainly.</h1>
+      <p class="reveal in" data-delay="2">A growing record of what we've built and what's underway. Filter by sector, tap a card to read more.</p>
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="filters reveal">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="mining">Mining</button>
+        <button class="filter" data-filter="investment">Investment</button>
+        <button class="filter" data-filter="industrial">Industrial Technology</button>
+      </div>
+
+      <div class="project-grid">
+        <article class="project reveal" data-sector="mining">
+          <div class="project__top"><span class="project__sector">Mining</span><span class="status status--active">Active</span></div>
+          <h3>Regional Resource Development</h3>
+          <p class="project__loc">Sultanate of Oman</p>
+          <p class="project__desc">A flagship mining operation combining early-stage resource assessment with industrial-grade execution, demonstrating RSD's integrated approach end to end.</p>
+          <span class="project__toggle">Tap to expand +</span>
+        </article>
+
+        <article class="project reveal" data-sector="investment" data-delay="1">
+          <div class="project__top"><span class="project__sector">Investment</span><span class="status status--active">Active</span></div>
+          <h3>Strategic Asset Fund</h3>
+          <p class="project__loc">Gulf Region</p>
+          <p class="project__desc">A structured investment vehicle allocating capital into long-term industrial and resource-linked assets with measurable returns.</p>
+          <span class="project__toggle">Tap to expand +</span>
+        </article>
+
+        <article class="project reveal" data-sector="industrial" data-delay="2">
+          <div class="project__top"><span class="project__sector">Industrial Technology</span><span class="status status--active">Active</span></div>
+          <h3>Operations Modernisation Programme</h3>
+          <p class="project__loc">Middle East</p>
+          <p class="project__desc">Applying modern systems and automation to upgrade the efficiency, safety and resilience of existing industrial operations.</p>
+          <span class="project__toggle">Tap to expand +</span>
+        </article>
+
+        <article class="project reveal" data-sector="mining">
+          <div class="project__top"><span class="project__sector">Mining</span><span class="status status--completed">Completed</span></div>
+          <h3>Mineral Survey &amp; Feasibility</h3>
+          <p class="project__loc">East Africa</p>
+          <p class="project__desc">A completed resource identification and feasibility study laying the groundwork for responsible future development.</p>
+          <span class="project__toggle">Tap to expand +</span>
+        </article>
+
+        <article class="project reveal" data-sector="investment" data-delay="1">
+          <div class="project__top"><span class="project__sector">Investment</span><span class="status status--completed">Completed</span></div>
+          <h3>Joint Venture Structuring</h3>
+          <p class="project__loc">Gulf Region</p>
+          <p class="project__desc">Structured and closed a multi-party venture aligning partner interests around a shared long-term industrial asset.</p>
+          <span class="project__toggle">Tap to expand +</span>
+        </article>
+
+        <article class="project reveal" data-sector="industrial" data-delay="2">
+          <div class="project__top"><span class="project__sector">Industrial Technology</span><span class="status status--completed">Completed</span></div>
+          <h3>Process Engineering Upgrade</h3>
+          <p class="project__loc">Sultanate of Oman</p>
+          <p class="project__desc">Delivered a process improvement and integration project that measurably increased throughput while reducing downtime.</p>
+          <span class="project__toggle">Tap to expand +</span>
+        </article>
+      </div>
+
+      <p class="reveal" style="margin-top:2.5rem; font-size:0.85rem; color:var(--ivory-faint)">Projects shown are placeholders to demonstrate the layout — replace with real entries before launch. New projects are added as they come in.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <img src="assets/rsd-logo-ivory.png" alt="RSD">
+          <p>Where vision builds. A multi-sector company across mining, investment and industrial technology.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="what-we-do.html">What We Do</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Connect</h5>
+          <a href="mailto:hello@rsd.services">hello@rsd.services</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 RSD. All rights reserved.</span>
+        <span>Where Vision Builds</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
