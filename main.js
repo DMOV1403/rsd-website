@@ -85,7 +85,7 @@
       var note = form.querySelector('.form-note');
       if (note) {
         note.textContent = 'Thank you. This is a draft form. Connect it to email or a form service before launch.';
-        note.style.color = '#7c9bff';
+        note.style.color = '#0C7B74';
       }
       form.reset();
     });
