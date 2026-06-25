@@ -389,7 +389,7 @@ body.home .site-header:not(.scrolled):not(.menu-open) .nav-toggle span { backgro
 .project.hide { display: none; }
 
 /* ------------------------------------------------------------- Contact */
-.contact-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+.contact-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(1.5rem, 3.5vw, 2.5rem); align-items: stretch; }
 .field { margin-bottom: 1.3rem; }
 .field label { display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ivory-dim); margin-bottom: 0.55rem; }
 .field input, .field textarea {
@@ -760,22 +760,47 @@ body.home .site-header:not(.scrolled):not(.menu-open) .nav-toggle span { backgro
 .project[data-sector="industrial"] .project__sector { color: var(--royal); }
 .project[data-sector="investment"] .project__sector { color: var(--teal); }
 
-/* Contact form sits in a card */
-.contact-form {
-  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
-  padding: clamp(1.5rem, 3vw, 2.4rem);
-  box-shadow: 0 14px 40px -28px rgba(20,30,50,0.35);
+/* Form card (left) */
+.contact-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+  padding: clamp(1.6rem, 3vw, 2.6rem);
+  box-shadow: 0 30px 70px -45px rgba(20,30,50,0.45);
 }
+.contact-card__title { font-size: 1.4rem; margin-bottom: 1.6rem; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.contact-form .btn { margin-top: 0.4rem; }
 
-/* Contact details with icon tiles */
+/* Info panel (right, navy) */
+.contact-aside {
+  display: flex; flex-direction: column; border-radius: 16px;
+  padding: clamp(1.8rem, 3vw, 2.6rem); color: var(--ivory);
+  background:
+    radial-gradient(120% 120% at 100% 0%, rgba(16,46,128,0.55), transparent 55%),
+    var(--midnight);
+}
+.contact-aside__title { color: var(--ivory); font-size: 1.4rem; }
+.contact-aside__sub { color: var(--ivory-dim); margin: 0.6rem 0 1.8rem; font-size: 0.95rem; }
+.contact-aside__list { display: flex; flex-direction: column; }
+.contact-aside__note { margin-top: auto; padding-top: 1.6rem; color: rgba(255,255,255,0.5); font-size: 0.8rem; }
+
+/* Contact detail rows (icon tiles) */
 .contact-detail { display: flex; gap: 1rem; align-items: flex-start; }
 .contact-detail__ic {
   width: 44px; height: 44px; border-radius: 11px; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
-  background: var(--teal-soft); color: var(--teal);
 }
 .contact-detail__ic svg { width: 20px; height: 20px; }
 .contact-detail__body { flex: 1; }
+
+/* detail rows inside the navy panel */
+.contact-aside .contact-detail { border-top: 1px solid rgba(255,255,255,0.12); padding: 1.2rem 0; }
+.contact-aside .contact-detail:first-child { border-top: 0; padding-top: 0; }
+.contact-aside .contact-detail__ic { background: rgba(255,255,255,0.08); color: var(--teal-light); }
+.contact-aside .contact-detail .lbl { color: rgba(255,255,255,0.55); }
+.contact-aside .contact-detail a, .contact-aside .contact-detail p { color: #fff; }
+.contact-aside .contact-detail a:hover { color: var(--teal-light); }
+
+@media (max-width: 560px) { .field-row { grid-template-columns: 1fr; gap: 0; } }
 
 /* ============================================ Advanced enhancements */
 
