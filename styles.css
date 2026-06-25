@@ -496,11 +496,14 @@ body.home .site-header:not(.scrolled) .nav-toggle span { background: var(--ivory
   border: 1px solid var(--obsidian-line); border-radius: 6px;
   box-shadow: 0 30px 70px -40px rgba(0,0,0,0.95);
 }
-.stat { padding: 1.7rem 1.4rem; text-align: center; border-right: 1px solid var(--obsidian-line); }
+.stat { display: flex; align-items: center; justify-content: center; gap: 0.85rem; padding: 1.6rem 1.2rem; border-right: 1px solid var(--obsidian-line); }
 .stat:last-child { border-right: 0; }
-.stat b { display: block; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; color: var(--ivory); }
+.stat__ic { width: 30px; height: 30px; color: var(--royal); flex-shrink: 0; }
+.stat__ic svg { width: 100%; height: 100%; display: block; }
+.stat__txt { display: flex; flex-direction: column; }
+.stat b { font-size: clamp(1.35rem, 2.6vw, 2rem); font-weight: 800; letter-spacing: -0.02em; color: var(--ivory); line-height: 1; }
 .stat b .hl { color: var(--red); }
-.stat span { display: block; margin-top: 0.35rem; font-size: 0.72rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ivory-faint); }
+.stat span { margin-top: 0.3rem; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ivory-faint); }
 
 /* Service cards with imagery */
 .scards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
@@ -630,4 +633,32 @@ body.home .site-header:not(.scrolled) .nav-toggle span { background: var(--ivory
   body.home .site-header.menu-open:not(.scrolled) .nav a { color: var(--ink); }
   body.home .site-header.menu-open:not(.scrolled) .nav a[aria-current="page"] { color: var(--red); }
   .site-header.menu-open { background: rgba(255,255,255,0.95); }
+}
+
+/* ============================ Reference-style header row + icon cards */
+.lead-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem);
+  align-items: end; margin-bottom: clamp(2.4rem, 5vw, 3.4rem);
+}
+.lead-row__title { font-size: clamp(1.9rem, 4.4vw, 3rem); line-height: 1.06; }
+.lead-row__title .accent2 { color: var(--teal); }
+.lead-row__aside p { color: var(--ink-dim); max-width: 30rem; }
+.textlink {
+  display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.1rem;
+  color: var(--royal); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.textlink span { transition: transform .25s var(--ease); }
+.textlink:hover span { transform: translateX(4px); }
+
+.scard__icon {
+  width: 56px; height: 56px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem;
+}
+.scard__icon svg { width: 26px; height: 26px; }
+.ic-red  { background: var(--red-soft);  color: var(--red); }
+.ic-teal { background: var(--teal-soft); color: var(--teal); }
+.ic-navy { background: rgba(16,46,128,0.12); color: var(--royal); }
+
+@media (max-width: 760px) {
+  .lead-row { grid-template-columns: 1fr; align-items: start; gap: 1.1rem; }
 }
