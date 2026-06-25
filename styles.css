@@ -138,6 +138,9 @@ a { color: inherit; text-decoration: none; }
 .brand .brand__dark { display: block; }
 body.home .site-header:not(.scrolled) .brand .brand__light { display: block; }
 body.home .site-header:not(.scrolled) .brand .brand__dark { display: none; }
+/* menu open turns the header white, so force the dark logo (else white-on-white) */
+body.home .site-header.menu-open:not(.scrolled) .brand .brand__light { display: none; }
+body.home .site-header.menu-open:not(.scrolled) .brand .brand__dark { display: block; }
 
 .nav { display: flex; align-items: center; gap: clamp(1.4rem, 2.6vw, 2.5rem); }
 .nav a {
@@ -152,10 +155,10 @@ body.home .site-header:not(.scrolled) .brand .brand__dark { display: none; }
 }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--ink); }
 .nav a:not(.btn):hover::after, .nav a[aria-current="page"]:not(.btn)::after { width: 100%; }
-/* light nav text while transparent over the hero */
-body.home .site-header:not(.scrolled) .nav a { color: rgba(254,249,242,0.82); }
-body.home .site-header:not(.scrolled) .nav a:hover,
-body.home .site-header:not(.scrolled) .nav a[aria-current="page"] { color: var(--ivory); }
+/* light nav text while transparent over the hero (not while the menu is open) */
+body.home .site-header:not(.scrolled):not(.menu-open) .nav a { color: rgba(254,249,242,0.82); }
+body.home .site-header:not(.scrolled):not(.menu-open) .nav a:hover,
+body.home .site-header:not(.scrolled):not(.menu-open) .nav a[aria-current="page"] { color: var(--ivory); }
 
 /* Contact CTA: a refined brand-red pill */
 .nav .btn {
@@ -197,7 +200,7 @@ body.home .site-header:not(.scrolled) .nav a[aria-current="page"] { color: var(-
 
 .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 0.4rem; }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--ink); margin: 5px 0; transition: .3s var(--ease); }
-body.home .site-header:not(.scrolled) .nav-toggle span { background: var(--ivory); }
+body.home .site-header:not(.scrolled):not(.menu-open) .nav-toggle span { background: var(--ivory); }
 .site-header.menu-open .nav-toggle span { background: var(--ink); }
 
 /* ----------------------------------------------------------------- Hero */
@@ -432,13 +435,22 @@ body.home .site-header:not(.scrolled) .nav-toggle span { background: var(--ivory
     transform: translateX(100%); transition: transform .42s var(--ease);
   }
   .nav.open { transform: none; }
-  .nav a {
-    font-size: 1.05rem; letter-spacing: 0.01em; color: var(--ivory);
-    padding: 1.05rem 0.2rem; border-bottom: 1px solid var(--obsidian-line);
+  .nav a:not(.btn) {
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 1.1rem; font-weight: 600; letter-spacing: 0.01em; color: var(--ink);
+    padding: 1.15rem 0.2rem; border-bottom: 1px solid var(--line);
     opacity: 0; transform: translateX(16px); transition: opacity .3s var(--ease), transform .3s var(--ease), color .25s var(--ease);
   }
-  .nav a:not(.btn)::after { display: none; }
-  .nav a[aria-current="page"] { color: var(--red); }
+  /* chevron on each link */
+  .nav a:not(.btn)::after {
+    content: '\203A'; position: static; width: auto; height: auto; background: none;
+    font-size: 1.35rem; line-height: 1; color: var(--ink-mute); opacity: .8;
+    transition: transform .25s var(--ease), color .25s var(--ease);
+  }
+  .nav a:not(.btn):hover { color: var(--red); }
+  .nav a:not(.btn):hover::after { transform: translateX(5px); color: var(--red); }
+  .nav a[aria-current="page"]:not(.btn) { color: var(--red); }
+  .nav a[aria-current="page"]:not(.btn)::after { color: var(--red); }
   .nav.open a { opacity: 1; transform: none; }
   .nav.open a:nth-child(1) { transition-delay: .08s; }
   .nav.open a:nth-child(2) { transition-delay: .14s; }
@@ -446,8 +458,8 @@ body.home .site-header:not(.scrolled) .nav-toggle span { background: var(--ivory
   .nav.open a:nth-child(4) { transition-delay: .26s; }
   .nav.open a:nth-child(5) { transition-delay: .32s; }
   .nav .btn {
-    margin-top: 1.6rem; justify-content: center; padding: 1rem; font-size: 0.8rem;
-    border: 0; border-radius: 3px;
+    margin-top: 1.8rem; justify-content: center; padding: 1.05rem; font-size: 0.78rem;
+    border: 0; border-radius: 100px; box-shadow: 0 12px 28px -12px rgba(200,16,46,0.6);
   }
 
   .nav-toggle { display: block; z-index: 101; position: relative; }
