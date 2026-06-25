@@ -4,9 +4,8 @@
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Sticky header + scroll progress bar + parallax + back-to-top */
+  /* Sticky header + scroll progress bar + back-to-top */
   var header = document.querySelector('.site-header');
-  var heroInner = document.querySelector('.hero__inner');
 
   var bar = document.createElement('div');
   bar.className = 'scroll-progress';
@@ -28,10 +27,6 @@
     var max = doc.scrollHeight - doc.clientHeight;
     bar.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
     toTop.classList.toggle('show', y > 600);
-    if (heroInner && !reduce && y < 800) {
-      heroInner.style.transform = 'translateY(' + (y * 0.18) + 'px)';
-      heroInner.style.opacity = String(Math.max(0, 1 - y / 620));
-    }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll, { passive: true });

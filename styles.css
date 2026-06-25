@@ -210,8 +210,8 @@ body.home .site-header:not(.scrolled) .nav-toggle span { background: var(--ivory
 .hero__bg {
   position: absolute; inset: 0; z-index: 0;
   background:
-    linear-gradient(100deg, rgba(8,11,22,0.78) 0%, rgba(8,11,22,0.45) 45%, rgba(8,11,22,0.15) 100%),
-    linear-gradient(180deg, rgba(8,11,22,0) 60%, rgba(244,246,249,0.0) 100%),
+    linear-gradient(100deg, rgba(8,11,22,0.92) 0%, rgba(8,11,22,0.78) 42%, rgba(8,11,22,0.45) 100%),
+    linear-gradient(180deg, rgba(8,11,22,0.25) 0%, rgba(8,11,22,0) 45%),
     radial-gradient(70% 60% at 75% 25%, rgba(16,46,128,0.30), transparent 60%),
     url('assets/hero.jpg') center / cover no-repeat,
     linear-gradient(120deg, #0a1326, #141414 55%, #0a1326);
@@ -223,10 +223,11 @@ body.home .site-header:not(.scrolled) .nav-toggle span { background: var(--ivory
   color: var(--ivory);
 }
 .hero h1 .accent { color: var(--ivory); display: block; }
-.hero .eyebrow { color: var(--teal-light); }
+.hero .eyebrow { color: rgba(254, 249, 242, 0.9); }
+.hero__inner { text-shadow: 0 1px 18px rgba(0, 0, 0, 0.35); }
 .hero__tag {
   margin-top: 1.6rem; font-size: clamp(1rem, 2.4vw, 1.4rem);
-  font-weight: 300; color: var(--ivory-dim); max-width: 34rem;
+  font-weight: 400; color: rgba(254, 249, 242, 0.92); max-width: 34rem;
 }
 .hero__cta { margin-top: 2.6rem; display: flex; gap: 1rem; flex-wrap: wrap; }
 
