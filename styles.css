@@ -449,7 +449,8 @@ body.home .site-header:not(.scrolled):not(.menu-open) .nav-toggle span { backgro
   }
   /* chevron pinned right so the text never wraps or shifts */
   .nav a:not(.btn)::after {
-    content: '\203A'; position: absolute; right: 0.3rem; top: 50%; width: auto; height: auto; background: none;
+    content: '\203A'; position: absolute; left: auto; bottom: auto; right: 0.3rem; top: 50%;
+    width: auto; height: auto; background: none;
     font-size: 1.35rem; line-height: 1; color: var(--ink-mute);
     transform: translateY(-50%);
     transition: transform .25s var(--ease), color .25s var(--ease);
