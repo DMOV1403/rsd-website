@@ -117,7 +117,7 @@ a { color: inherit; text-decoration: none; }
 .site-header {
   position: fixed; inset: 0 0 auto 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 1.05rem var(--gutter);
+  padding: 1rem max(var(--gutter), calc((100% - var(--maxw)) / 2));
   background: rgba(255,255,255,0);
   transition: background .4s var(--ease), border-color .4s var(--ease), padding .4s var(--ease), box-shadow .4s var(--ease);
   border-bottom: 1px solid transparent;
@@ -139,32 +139,33 @@ a { color: inherit; text-decoration: none; }
 body.home .site-header:not(.scrolled) .brand .brand__light { display: block; }
 body.home .site-header:not(.scrolled) .brand .brand__dark { display: none; }
 
-.nav { display: flex; align-items: center; gap: clamp(0.9rem, 2.4vw, 2.2rem); }
+.nav { display: flex; align-items: center; gap: clamp(1.4rem, 2.6vw, 2.5rem); }
 .nav a {
-  font-size: 0.74rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase;
-  color: var(--ink-dim); position: relative; padding: 0.45rem 0;
+  font-size: 0.92rem; font-weight: 500; letter-spacing: 0.005em;
+  color: var(--ink-dim); position: relative; padding: 0.5rem 0;
   transition: color .25s var(--ease);
 }
-.nav a::after {
-  content: ''; position: absolute; left: 50%; transform: translateX(-50%); bottom: -1px;
-  height: 2px; width: 0; background: var(--red); transition: width .3s var(--ease);
+.nav a:not(.btn)::after {
+  content: ''; position: absolute; left: 0; bottom: 0;
+  height: 2px; width: 0; background: var(--red); border-radius: 2px;
+  transition: width .3s var(--ease);
 }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--ink); }
-.nav a:hover::after, .nav a[aria-current="page"]::after { width: 100%; }
-.nav a[aria-current="page"].btn::after { display: none; }
+.nav a:not(.btn):hover::after, .nav a[aria-current="page"]:not(.btn)::after { width: 100%; }
 /* light nav text while transparent over the hero */
 body.home .site-header:not(.scrolled) .nav a { color: rgba(254,249,242,0.82); }
 body.home .site-header:not(.scrolled) .nav a:hover,
 body.home .site-header:not(.scrolled) .nav a[aria-current="page"] { color: var(--ivory); }
 
-/* Contact CTA in the nav uses the brand red */
+/* Contact CTA: a refined brand-red pill */
 .nav .btn {
   background: var(--red); border-color: var(--red); color: var(--ivory);
-  padding: 0.62rem 1.3rem; font-size: 0.72rem;
+  padding: 0.66rem 1.5rem; font-size: 0.74rem; border-radius: 100px;
+  box-shadow: 0 8px 22px -12px rgba(200,16,46,0.7);
 }
 .nav .btn:hover {
-  background: #e0162f; border-color: #e0162f;
-  box-shadow: 0 10px 24px -10px rgba(200,16,46,0.85);
+  background: #d20f2f; border-color: #d20f2f; transform: translateY(-2px);
+  box-shadow: 0 14px 28px -12px rgba(200,16,46,0.85);
 }
 
 /* Backdrop behind the mobile menu */
@@ -435,7 +436,7 @@ body.home .site-header:not(.scrolled) .nav-toggle span { background: var(--ivory
     padding: 1.05rem 0.2rem; border-bottom: 1px solid var(--obsidian-line);
     opacity: 0; transform: translateX(16px); transition: opacity .3s var(--ease), transform .3s var(--ease), color .25s var(--ease);
   }
-  .nav a::after { display: none; }
+  .nav a:not(.btn)::after { display: none; }
   .nav a[aria-current="page"] { color: var(--red); }
   .nav.open a { opacity: 1; transform: none; }
   .nav.open a:nth-child(1) { transition-delay: .08s; }
