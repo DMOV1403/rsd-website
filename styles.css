@@ -442,19 +442,20 @@ body.home .site-header:not(.scrolled):not(.menu-open) .nav-toggle span { backgro
   }
   .nav.open { transform: none; }
   .nav a:not(.btn) {
-    display: flex; align-items: center; justify-content: space-between;
+    position: relative; display: block; white-space: nowrap;
     font-size: 1.1rem; font-weight: 600; letter-spacing: 0.01em; color: var(--ink);
-    padding: 1.15rem 0.2rem; border-bottom: 1px solid var(--line);
+    padding: 1.15rem 1.8rem 1.15rem 0.2rem; border-bottom: 1px solid var(--line);
     opacity: 0; transform: translateX(16px); transition: opacity .3s var(--ease), transform .3s var(--ease), color .25s var(--ease);
   }
-  /* chevron on each link */
+  /* chevron pinned right so the text never wraps or shifts */
   .nav a:not(.btn)::after {
-    content: '\203A'; position: static; width: auto; height: auto; background: none;
-    font-size: 1.35rem; line-height: 1; color: var(--ink-mute); opacity: .8;
+    content: '\203A'; position: absolute; right: 0.3rem; top: 50%; width: auto; height: auto; background: none;
+    font-size: 1.35rem; line-height: 1; color: var(--ink-mute);
+    transform: translateY(-50%);
     transition: transform .25s var(--ease), color .25s var(--ease);
   }
   .nav a:not(.btn):hover { color: var(--red); }
-  .nav a:not(.btn):hover::after { transform: translateX(5px); color: var(--red); }
+  .nav a:not(.btn):hover::after { transform: translateY(-50%) translateX(5px); color: var(--red); }
   .nav a[aria-current="page"]:not(.btn) { color: var(--red); }
   .nav a[aria-current="page"]:not(.btn)::after { color: var(--red); }
   .nav.open a { opacity: 1; transform: none; }
