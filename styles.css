@@ -212,16 +212,6 @@ body.home .site-header:not(.scrolled) .nav-toggle span { background: var(--ivory
     url('assets/hero.jpg') center / cover no-repeat,
     linear-gradient(120deg, #0a1326, #141414 55%, #0a1326);
 }
-/* faint concentric arcs echoing the logo mark */
-.hero__bg::after {
-  content: ''; position: absolute; right: -12%; top: 50%; transform: translateY(-50%);
-  width: 70vmax; height: 70vmax;
-  background:
-    radial-gradient(circle, transparent 40%, rgba(254,249,242,0.04) 40.4%, transparent 41.2%),
-    radial-gradient(circle, transparent 48%, rgba(254,249,242,0.05) 48.4%, transparent 49.4%),
-    radial-gradient(circle, transparent 56%, rgba(254,249,242,0.035) 56.4%, transparent 57.6%);
-  pointer-events: none;
-}
 .hero__inner { position: relative; z-index: 1; max-width: 54rem; }
 .hero h1 {
   font-size: clamp(2.6rem, 8vw, 6rem);
