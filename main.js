@@ -2,21 +2,51 @@
 (function () {
   'use strict';
 
-  /* Sticky header + scroll progress bar */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Sticky header + scroll progress bar + parallax + back-to-top */
   var header = document.querySelector('.site-header');
+  var heroInner = document.querySelector('.hero__inner');
+
   var bar = document.createElement('div');
   bar.className = 'scroll-progress';
   document.body.appendChild(bar);
 
+  var toTop = document.createElement('button');
+  toTop.className = 'to-top';
+  toTop.setAttribute('aria-label', 'Back to top');
+  toTop.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+  document.body.appendChild(toTop);
+  toTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  });
+
   function onScroll() {
-    if (header) header.classList.toggle('scrolled', window.scrollY > 24);
+    var y = window.scrollY;
+    if (header) header.classList.toggle('scrolled', y > 24);
     var doc = document.documentElement;
     var max = doc.scrollHeight - doc.clientHeight;
-    bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+    bar.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+    toTop.classList.toggle('show', y > 600);
+    if (heroInner && !reduce && y < 800) {
+      heroInner.style.transform = 'translateY(' + (y * 0.18) + 'px)';
+      heroInner.style.opacity = String(Math.max(0, 1 - y / 620));
+    }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll, { passive: true });
   onScroll();
+
+  /* Cursor-follow spotlight on cards */
+  if (!reduce && window.matchMedia('(pointer: fine)').matches) {
+    document.querySelectorAll('.scard, .pcard, .project').forEach(function (card) {
+      card.addEventListener('pointermove', function (e) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
 
   /* Mobile nav */
   var toggle = document.querySelector('.nav-toggle');

@@ -758,3 +758,43 @@ body.home .site-header:not(.scrolled) .nav-toggle span { background: var(--ivory
 }
 .contact-detail__ic svg { width: 20px; height: 20px; }
 .contact-detail__body { flex: 1; }
+
+/* ============================================ Advanced enhancements */
+
+/* Smooth cross-page transitions (View Transitions API; ignored where unsupported) */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: vtOut .32s var(--ease) both; }
+::view-transition-new(root) { animation: vtIn .42s var(--ease) both; }
+@keyframes vtOut { to { opacity: 0; transform: translateY(-8px); } }
+@keyframes vtIn  { from { opacity: 0; transform: translateY(12px); } }
+
+/* Cursor-follow spotlight on cards */
+.scard, .pcard, .project { position: relative; }
+.scard::after, .pcard::after, .project::after {
+  content: ''; position: absolute; inset: 0; z-index: 3; pointer-events: none; border-radius: inherit;
+  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%), rgba(16,46,128,0.10), transparent 60%);
+  opacity: 0; transition: opacity .35s var(--ease);
+}
+.scard:hover::after, .pcard:hover::after, .project:hover::after { opacity: 1; }
+
+/* Hero content parallax (driven by JS) */
+.hero__inner { will-change: transform; }
+
+/* Back-to-top control */
+.to-top {
+  position: fixed; right: 1.4rem; bottom: 1.4rem; z-index: 90;
+  width: 46px; height: 46px; border-radius: 50%; border: 0; cursor: pointer;
+  background: var(--royal); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 12px 30px -12px rgba(16,46,128,0.6);
+  opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity .3s var(--ease), transform .3s var(--ease), visibility .3s var(--ease), background .25s var(--ease);
+}
+.to-top.show { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { background: var(--red); transform: translateY(-3px); }
+.to-top svg { width: 20px; height: 20px; }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+  .hero__inner { transform: none !important; opacity: 1 !important; }
+}
