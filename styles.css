@@ -190,47 +190,45 @@ body.home .site-header:not(.scrolled) .nav a[aria-current="page"] { color: var(-
 .btn--ink { background: var(--obsidian); color: var(--ivory); border-color: var(--obsidian); }
 
 /* Buttons sitting on dark backgrounds (hero, navy) become a light pill */
-.section--navy .btn { background: var(--ivory); color: var(--obsidian); border-color: var(--ivory); }
-.section--navy .btn:hover { background: #fff; box-shadow: 0 14px 28px -14px rgba(0,0,0,0.6); }
-.section--navy .btn--ghost { background: transparent; color: var(--ivory); border-color: rgba(254,249,242,0.4); }
-.section--navy .btn--ghost:hover { border-color: var(--ivory); }
+.hero .btn, .section--navy .btn { background: var(--ivory); color: var(--obsidian); border-color: var(--ivory); }
+.hero .btn:hover, .section--navy .btn:hover { background: #fff; box-shadow: 0 14px 28px -14px rgba(0,0,0,0.6); }
+.hero .btn--ghost, .section--navy .btn--ghost { background: transparent; color: var(--ivory); border-color: rgba(254,249,242,0.4); }
+.hero .btn--ghost:hover, .section--navy .btn--ghost:hover { border-color: var(--ivory); }
 
 .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 0.4rem; }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--ink); margin: 5px 0; transition: .3s var(--ease); }
 body.home .site-header:not(.scrolled) .nav-toggle span { background: var(--ivory); }
 .site-header.menu-open .nav-toggle span { background: var(--ink); }
 
-/* --------------------------------------------- Hero (light, two-column) */
+/* ----------------------------------------------------------------- Hero */
 .hero {
-  position: relative; overflow: hidden;
-  padding-top: clamp(7rem, 13vh, 9.5rem); padding-bottom: clamp(3rem, 6vw, 5rem);
+  position: relative; min-height: 100svh;
+  display: flex; align-items: center;
+  padding-top: 6rem;
+  overflow: hidden;
+}
+.hero__bg {
+  position: absolute; inset: 0; z-index: 0;
   background:
-    radial-gradient(55% 75% at 92% 8%, rgba(16,46,128,0.07), transparent 60%),
-    linear-gradient(180deg, #ffffff 0%, var(--paper) 100%);
+    linear-gradient(100deg, rgba(8,11,22,0.78) 0%, rgba(8,11,22,0.45) 45%, rgba(8,11,22,0.15) 100%),
+    linear-gradient(180deg, rgba(8,11,22,0) 60%, rgba(244,246,249,0.0) 100%),
+    radial-gradient(70% 60% at 75% 25%, rgba(16,46,128,0.30), transparent 60%),
+    url('assets/hero.jpg') center / cover no-repeat,
+    linear-gradient(120deg, #0a1326, #141414 55%, #0a1326);
 }
-.hero__grid {
-  display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(2rem, 5vw, 4.5rem);
-  align-items: center; min-height: min(78vh, 680px);
-}
-.hero__content { max-width: 38rem; }
-.hero .eyebrow { color: var(--teal); }
+.hero__inner { position: relative; z-index: 1; max-width: 54rem; }
 .hero h1 {
-  font-size: clamp(2.6rem, 6vw, 4.8rem);
-  font-weight: 800; letter-spacing: -0.035em; line-height: 1.02;
-  color: var(--ink); margin-top: 1rem;
+  font-size: clamp(2.6rem, 8vw, 6rem);
+  font-weight: 800; letter-spacing: -0.035em; line-height: 0.98;
+  color: var(--ivory);
 }
-.hero h1 .accent { color: var(--red); }
+.hero h1 .accent { color: var(--ivory); display: block; }
+.hero .eyebrow { color: var(--teal-light); }
 .hero__tag {
-  margin-top: 1.5rem; font-size: clamp(1.02rem, 1.5vw, 1.2rem);
-  font-weight: 400; color: var(--ink-dim); max-width: 33rem;
+  margin-top: 1.6rem; font-size: clamp(1rem, 2.4vw, 1.4rem);
+  font-weight: 300; color: var(--ivory-dim); max-width: 34rem;
 }
-.hero__cta { margin-top: 2.2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
-
-.hero__media { position: relative; }
-.hero__media img {
-  width: 100%; height: 100%; max-height: 72vh; object-fit: cover; display: block;
-  border-radius: 18px; box-shadow: 0 44px 90px -44px rgba(16,30,60,0.5);
-}
+.hero__cta { margin-top: 2.6rem; display: flex; gap: 1rem; flex-wrap: wrap; }
 
 /* ------------------------------------------------------------ Intro row */
 .intro { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
@@ -414,14 +412,12 @@ body.home .site-header:not(.scrolled) .nav-toggle span { background: var(--ivory
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
-  .hero__content > *, .hero__media { opacity: 1; transform: none; }
+  .hero__inner > * { opacity: 1; transform: none; }
 }
 
 /* ------------------------------------------------------------ Responsive */
 @media (max-width: 880px) {
   .feature, .split, .contact-grid, .sector { grid-template-columns: 1fr; }
-  .hero__grid { grid-template-columns: 1fr; gap: 2.2rem; min-height: auto; }
-  .hero__media img { max-height: 46vh; }
   .footer-top { grid-template-columns: 1fr 1fr; }
 
   /* Slide-in mobile menu */
@@ -676,15 +672,19 @@ body.home .site-header:not(.scrolled) .nav-toggle span { background: var(--ivory
 
 /* ===================================================== Animation polish */
 
+/* Slow drift on the hero image (Ken Burns) */
+@keyframes heroDrift { from { transform: scale(1); } to { transform: scale(1.09); } }
+.hero__bg { animation: heroDrift 24s ease-in-out infinite alternate; will-change: transform; }
+
 /* Hero content rises in on load (pure CSS, no JS dependency).
-   Base opacity is 1 so content is never stuck hidden if animation does not run. */
-@keyframes heroIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
-.hero__content > * { opacity: 1; animation: heroIn .8s var(--ease) both; }
-.hero__content > *:nth-child(1) { animation-delay: .05s; }
-.hero__content > *:nth-child(2) { animation-delay: .15s; }
-.hero__content > *:nth-child(3) { animation-delay: .26s; }
-.hero__content > *:nth-child(4) { animation-delay: .36s; }
-.hero__media { opacity: 1; animation: heroIn .9s var(--ease) .2s both; }
+   Base opacity is 1 so content is never stuck hidden if animation does not run;
+   the 'both' fill handles the from-state during the stagger delay. */
+@keyframes heroIn { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+.hero__inner > * { opacity: 1; animation: heroIn .85s var(--ease) both; }
+.hero__inner > *:nth-child(1) { animation-delay: .05s; }
+.hero__inner > *:nth-child(2) { animation-delay: .15s; }
+.hero__inner > *:nth-child(3) { animation-delay: .28s; }
+.hero__inner > *:nth-child(4) { animation-delay: .40s; }
 
 /* Image zoom when hovering a card */
 .ph img { transition: transform .65s var(--ease); }
@@ -696,6 +696,7 @@ body.home .site-header:not(.scrolled) .nav-toggle span { background: var(--ivory
 
 
 @media (prefers-reduced-motion: reduce) {
+  .hero__bg { animation: none; }
   .scard:hover .ph img, .pcard:hover .ph img { transform: none; }
 }
 
@@ -776,6 +777,9 @@ body.home .site-header:not(.scrolled) .nav-toggle span { background: var(--ivory
 }
 .scard:hover::after, .pcard:hover::after, .project:hover::after { opacity: 1; }
 
+/* Hero content parallax (driven by JS) */
+.hero__inner { will-change: transform; }
+
 /* Back-to-top control */
 .to-top {
   position: fixed; right: 1.4rem; bottom: 1.4rem; z-index: 90;
@@ -792,4 +796,5 @@ body.home .site-header:not(.scrolled) .nav-toggle span { background: var(--ivory
 
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+  .hero__inner { transform: none !important; opacity: 1 !important; }
 }
