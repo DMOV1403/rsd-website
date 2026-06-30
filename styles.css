@@ -161,8 +161,8 @@ a { color: inherit; text-decoration: none; }
 .site-header.scrolled .brand img { height: 32px; }
 .brand__light { display: none; }
 .brand__dark  { display: block; }
-body.home .site-header:not(.scrolled):not(.menu-open) .brand__dark  { display: none; }
-body.home .site-header:not(.scrolled):not(.menu-open) .brand__light { display: block; }
+body.dark-hero .site-header:not(.scrolled):not(.menu-open) .brand__dark  { display: none; }
+body.dark-hero .site-header:not(.scrolled):not(.menu-open) .brand__light { display: block; }
 
 /* Desktop links */
 .nav { display: flex; align-items: center; gap: clamp(1.5rem, 2.6vw, 2.6rem); }
@@ -177,9 +177,9 @@ body.home .site-header:not(.scrolled):not(.menu-open) .brand__light { display: b
 }
 .nav a:not(.btn):hover, .nav a:not(.btn)[aria-current="page"] { color: var(--ink); }
 .nav a:not(.btn):hover::after, .nav a:not(.btn)[aria-current="page"]::after { transform: scaleX(1); }
-body.home .site-header:not(.scrolled):not(.menu-open) .nav a:not(.btn) { color: rgba(255,255,255,0.82); }
-body.home .site-header:not(.scrolled):not(.menu-open) .nav a:not(.btn):hover,
-body.home .site-header:not(.scrolled):not(.menu-open) .nav a:not(.btn)[aria-current="page"] { color: #fff; }
+body.dark-hero .site-header:not(.scrolled):not(.menu-open) .nav a:not(.btn) { color: rgba(255,255,255,0.82); }
+body.dark-hero .site-header:not(.scrolled):not(.menu-open) .nav a:not(.btn):hover,
+body.dark-hero .site-header:not(.scrolled):not(.menu-open) .nav a:not(.btn)[aria-current="page"] { color: #fff; }
 
 /* Contact CTA: red pill */
 .nav .btn {
@@ -224,7 +224,7 @@ body.home .site-header:not(.scrolled):not(.menu-open) .nav a:not(.btn)[aria-curr
   display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; margin: 5px 0;
   transition: transform .3s var(--ease), opacity .3s var(--ease), background .3s var(--ease);
 }
-body.home .site-header:not(.scrolled):not(.menu-open) .nav-toggle span { background: #fff; }
+body.dark-hero .site-header:not(.scrolled):not(.menu-open) .nav-toggle span { background: #fff; }
 
 /* ----------------------------------------------------------------- Hero */
 .hero {
@@ -854,6 +854,23 @@ body.home .site-header:not(.scrolled):not(.menu-open) .nav-toggle span { backgro
 }
 
 @media (prefers-reduced-motion: reduce) { .imgband__bg { animation: none; } }
+
+/* Image-backed page hero (inner pages) */
+.page-hero--img { position: relative; overflow: hidden; color: var(--ivory); isolation: isolate; }
+.page-hero__bg {
+  position: absolute; inset: 0; z-index: -2;
+  background-position: center; background-size: cover; background-repeat: no-repeat;
+  transform: scale(1.05);
+}
+.page-hero--img::after {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(8,11,22,0.6), rgba(8,11,22,0.82)),
+    radial-gradient(90% 85% at 78% -10%, rgba(16,46,128,0.45), transparent 60%);
+}
+.page-hero--img .eyebrow { color: var(--teal-light); }
+.page-hero--img h1 { color: var(--ivory); }
+.page-hero--img p { color: var(--ivory-dim); }
 
 /* ============================================ Advanced enhancements */
 
