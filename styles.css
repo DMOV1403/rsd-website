@@ -4,47 +4,48 @@
    Montserrat throughout. Minimal motion.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Hanken+Grotesk:wght@300;400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap');
 
 :root {
-  /* Surfaces (warm, restrained) */
-  --paper:     #F6F3EC;   /* warm off-white page */
-  --paper-2:   #EFEBE1;   /* alternate light section */
-  --surface:   #FFFFFF;   /* cards */
-  --line:      #E5DFD3;   /* warm hairline */
+  /* Surfaces: warm bone + ink, editorial monochrome */
+  --paper:     #F3EFE6;   /* warm bone page */
+  --paper-2:   #EAE5D9;   /* alternate light section */
+  --surface:   #FBFAF5;   /* warm-white cards */
+  --line:      #DCD5C5;   /* warm hairline */
 
-  /* Ink (primary text + near-black navy) */
-  --ink:       #16181F;
-  --ink-dim:   rgba(22, 24, 31, 0.64);
-  --ink-mute:  rgba(22, 24, 31, 0.44);
-  --ink-faint: rgba(22, 24, 31, 0.10);
+  /* Ink (warm near-black) */
+  --ink:       #1A1813;
+  --ink-dim:   rgba(26, 24, 19, 0.62);
+  --ink-mute:  rgba(26, 24, 19, 0.42);
+  --ink-faint: rgba(26, 24, 19, 0.12);
 
-  /* Dark sections (deep navy family) */
-  --obsidian:      #0E1018;
-  --midnight:      #141A2B;
-  --deep-sea:      #1A2336;
-  --royal:         #1C2A49;   /* refined navy: primary buttons / icons */
-  --obsidian-soft: #1A1C24;
-  --obsidian-line: #2A2D38;
+  /* Dark sections (deep warm ink) */
+  --obsidian:      #121009;
+  --midnight:      #17150E;
+  --deep-sea:      #211E15;
+  --royal:         #1A1813;   /* primary buttons = ink */
+  --obsidian-soft: #1E1B13;
+  --obsidian-line: #322E22;
 
   /* Warm-white text on dark */
-  --ivory:       #F4F0E8;
-  --ivory-dim:   rgba(244, 240, 232, 0.66);
-  --ivory-faint: rgba(244, 240, 232, 0.40);
+  --ivory:       #F3EFE6;
+  --ivory-dim:   rgba(243, 239, 230, 0.62);
+  --ivory-faint: rgba(243, 239, 230, 0.38);
   --pure-white:  #FFFFFF;
 
-  /* Accents: refined red (primary action) + bronze (labels, detail).
-     The 'teal' tokens are repurposed as bronze so existing components inherit it. */
-  --red:        #A81D33;
-  --red-soft:   rgba(168, 29, 51, 0.10);
-  --teal:       #9A7B4F;   /* bronze */
-  --teal-soft:  rgba(154, 123, 79, 0.13);
-  --teal-deep:  #7A6038;
-  --teal-light: #C7A86C;
+  /* One sharp accent: oxblood red. 'teal' tokens neutralised to warm grey
+     so any legacy usage stays quiet and monochrome. */
+  --red:        #9E2433;
+  --red-soft:   rgba(158, 36, 51, 0.10);
+  --teal:       #6E6A5C;   /* warm grey (neutral) */
+  --teal-soft:  rgba(26, 24, 19, 0.06);
+  --teal-deep:  #4C483C;
+  --teal-light: #B6B0A0;
 
   /* Type */
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
+  --font-body:    'Hanken Grotesk', -apple-system, system-ui, 'Segoe UI', sans-serif;
+  --font-mono:    'Spline Sans Mono', ui-monospace, 'SFMono-Regular', monospace;
 
   --maxw: 1180px;
   --gutter: clamp(1.25rem, 5vw, 4rem);
@@ -87,19 +88,19 @@ img { max-width: 100%; }
 /* ----------------------------------------------------------- Typography */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 500; line-height: 1.1; letter-spacing: -0.015em;
+  font-weight: 500; line-height: 1.06; letter-spacing: 0;
 }
-h3, h4 { font-weight: 600; }
+h3, h4 { font-weight: 600; letter-spacing: -0.005em; }
 
 .eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: var(--ink-mute);
 }
-.eyebrow--ink { color: var(--teal); }
+.eyebrow--ink { color: var(--ink-mute); }
 
 a { color: inherit; text-decoration: none; }
 
@@ -175,14 +176,10 @@ body.dark-hero .site-header:not(.scrolled):not(.menu-open) .nav a:not(.btn)[aria
 
 /* Contact CTA: red pill */
 .nav .btn {
-  background: var(--red); color: #fff; border-color: var(--red); white-space: nowrap;
-  padding: 0.64rem 1.45rem; font-size: 0.74rem; border-radius: 100px;
-  box-shadow: 0 8px 20px -12px rgba(200,16,46,0.7);
+  background: var(--red); color: var(--ivory); border-color: var(--red); white-space: nowrap;
+  padding: 0.6rem 1.3rem; font-size: 0.7rem; border-radius: 0;
 }
-.nav .btn:hover {
-  background: #d20f2f; border-color: #d20f2f; transform: translateY(-2px);
-  box-shadow: 0 14px 26px -12px rgba(200,16,46,0.85);
-}
+.nav .btn:hover { background: var(--ink); border-color: var(--ink); }
 
 /* Backdrop behind the mobile menu */
 .nav-overlay {
@@ -193,17 +190,18 @@ body.dark-hero .site-header:not(.scrolled):not(.menu-open) .nav a:not(.btn)[aria
 .nav-overlay.show { opacity: 1; visibility: visible; }
 
 .btn {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
-  padding: 0.75rem 1.5rem; border-radius: 3px;
-  background: var(--royal); color: var(--ivory);
-  border: 1px solid var(--royal);
-  transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), box-shadow .25s var(--ease);
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.85rem 1.6rem; border-radius: 0;
+  background: var(--ink); color: var(--ivory);
+  border: 1px solid var(--ink);
+  transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
 }
-.btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -14px rgba(16,46,128,0.6); }
-.btn--ghost { background: transparent; color: var(--ink); border-color: var(--ink-faint); }
-.btn--ghost:hover { border-color: var(--ink); box-shadow: none; }
-.btn--ink { background: var(--obsidian); color: var(--ivory); border-color: var(--obsidian); }
+.btn:hover { background: var(--red); border-color: var(--red); }
+.btn--ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn--ghost:hover { background: var(--ink); color: var(--ivory); }
+.btn--ink { background: var(--ink); color: var(--ivory); border-color: var(--ink); }
 
 /* Buttons sitting on dark backgrounds (hero, navy) become a light pill */
 .hero .btn, .section--navy .btn { background: var(--ivory); color: var(--obsidian); border-color: var(--ivory); }
@@ -236,8 +234,8 @@ body.dark-hero .site-header:not(.scrolled):not(.menu-open) .nav-toggle span { ba
 }
 .hero__inner { position: relative; z-index: 1; max-width: 54rem; }
 .hero h1 {
-  font-size: clamp(2.8rem, 8vw, 5.8rem);
-  font-weight: 500; letter-spacing: -0.02em; line-height: 1.02;
+  font-size: clamp(2.9rem, 8.5vw, 6.2rem);
+  font-weight: 500; letter-spacing: 0; line-height: 1.0;
   color: var(--ivory);
 }
 .hero h1 .accent { color: var(--ivory); display: block; font-style: italic; font-weight: 400; }
