@@ -53,7 +53,15 @@
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; overflow-x: clip; }
 
 body {
-  background: var(--paper);
+  background-color: var(--paper);
+  /* soft gradient-mesh blobs + a faint blueprint dot grid so sections are never dead-flat */
+  background-image:
+    radial-gradient(42rem 34rem at 100% -6%, rgba(16,46,128,0.07), transparent 60%),
+    radial-gradient(38rem 32rem at -8% 18%, rgba(200,16,46,0.045), transparent 60%),
+    radial-gradient(40rem 36rem at 50% 118%, rgba(22,163,154,0.06), transparent 60%),
+    radial-gradient(rgba(16,46,128,0.05) 1px, transparent 1.6px);
+  background-size: auto, auto, auto, 24px 24px;
+  background-attachment: fixed, fixed, fixed, scroll;
   color: var(--ink);
   font-weight: 400;
   line-height: 1.6;
@@ -95,11 +103,21 @@ a { color: inherit; text-decoration: none; }
 .wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--gutter); }
 
 .section { padding-block: clamp(4.5rem, 11vw, 9rem); }
-.section--light { background: var(--paper-2); color: var(--ink); }
-.section--white { background: var(--surface); color: var(--ink); }
+.section--light {
+  background-color: var(--paper-2); color: var(--ink);
+  background-image: radial-gradient(rgba(16,46,128,0.05) 1px, transparent 1.6px);
+  background-size: 24px 24px;
+}
+.section--white {
+  background-color: var(--surface); color: var(--ink);
+  background-image: radial-gradient(rgba(16,46,128,0.035) 1px, transparent 1.6px);
+  background-size: 24px 24px;
+}
 .section--navy {
   background:
-    radial-gradient(120% 120% at 80% -10%, rgba(16, 46, 128, 0.45), transparent 55%),
+    radial-gradient(60% 80% at 88% -10%, rgba(43,81,200,0.5), transparent 55%),
+    radial-gradient(52% 60% at -5% 112%, rgba(22,163,154,0.20), transparent 55%),
+    radial-gradient(40% 50% at 50% 50%, rgba(200,16,46,0.06), transparent 60%),
     var(--midnight);
   color: var(--ivory);
 }
@@ -801,6 +819,41 @@ body.home .site-header:not(.scrolled):not(.menu-open) .nav-toggle span { backgro
 .contact-aside .contact-detail a:hover { color: var(--teal-light); }
 
 @media (max-width: 560px) { .field-row { grid-template-columns: 1fr; gap: 0; } }
+
+/* ============================================ Image bands (photo backgrounds) */
+.imgband {
+  position: relative; overflow: hidden; color: var(--ivory);
+  padding-block: clamp(5rem, 13vw, 9rem);
+  isolation: isolate;
+}
+.imgband__bg {
+  position: absolute; inset: 0; z-index: -2;
+  background-position: center; background-size: cover; background-repeat: no-repeat;
+  transform: scale(1.06);
+  animation: bandDrift 26s ease-in-out infinite alternate;
+}
+@keyframes bandDrift { from { transform: scale(1.06) translate(0,0); } to { transform: scale(1.12) translate(-1.5%, -1.5%); } }
+.imgband::after {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(8,11,22,0.74), rgba(8,11,22,0.86)),
+    radial-gradient(90% 80% at 50% -10%, rgba(16,46,128,0.45), transparent 60%);
+}
+.imgband .wrap { position: relative; z-index: 1; }
+.imgband .eyebrow { color: var(--teal-light); }
+.imgband h2 { color: var(--ivory); }
+.imgband p { color: var(--ivory-dim); }
+.imgband .btn { background: var(--ivory); color: var(--obsidian); border-color: var(--ivory); }
+.imgband .btn:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 16px 30px -14px rgba(0,0,0,0.7); }
+
+/* big statement variant */
+.imgband--statement { text-align: center; }
+.imgband__statement {
+  font-size: clamp(2rem, 5.5vw, 4rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05;
+  margin-top: 0.8rem;
+}
+
+@media (prefers-reduced-motion: reduce) { .imgband__bg { animation: none; } }
 
 /* ============================================ Advanced enhancements */
 
