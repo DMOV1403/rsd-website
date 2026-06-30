@@ -855,6 +855,24 @@ body.dark-hero .site-header:not(.scrolled):not(.menu-open) .nav-toggle span { ba
 
 @media (prefers-reduced-motion: reduce) { .imgband__bg { animation: none; } }
 
+/* Scrolling keyword marquee (investment-site ticker) */
+.marquee { overflow: hidden; background: var(--midnight); color: var(--ivory); border-block: 1px solid rgba(255,255,255,0.10); }
+.marquee__track {
+  display: inline-flex; align-items: center; gap: 2.6rem; padding: 1.15rem 0;
+  white-space: nowrap; will-change: transform; animation: marquee 34s linear infinite;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee__track span { font-size: clamp(1rem, 1.7vw, 1.35rem); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.marquee__track .dot { color: var(--red); }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee__track { animation: none; } }
+
+/* Editorial outlined headline word */
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--ivory); text-stroke: 1.6px var(--ivory);
+}
+
 /* Image-backed page hero (inner pages) */
 .page-hero--img { position: relative; overflow: hidden; color: var(--ivory); isolation: isolate; }
 .page-hero__bg {
