@@ -4,48 +4,53 @@
    Montserrat throughout. Minimal motion.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Primary palette */
-  --obsidian:    #0A0A0A;
-  --ivory:       #FEF9F2;
-  --pure-white:  #FAFAFA;
+  /* Surfaces (warm, restrained) */
+  --paper:     #F6F3EC;   /* warm off-white page */
+  --paper-2:   #EFEBE1;   /* alternate light section */
+  --surface:   #FFFFFF;   /* cards */
+  --line:      #E5DFD3;   /* warm hairline */
 
-  /* Secondary palette */
-  --midnight:    #080B2B;
-  --deep-sea:    #0A2947;
-  --royal:       #102E80;  /* deep navy */
+  /* Ink (primary text + near-black navy) */
+  --ink:       #16181F;
+  --ink-dim:   rgba(22, 24, 31, 0.64);
+  --ink-mute:  rgba(22, 24, 31, 0.44);
+  --ink-faint: rgba(22, 24, 31, 0.10);
 
-  /* Brand accents: red primary, teal for partnership / specialty */
-  --red:         #C8102E;
-  --red-soft:    rgba(200, 16, 46, 0.16);
-  --teal:        #16A39A;
-  --teal-soft:   rgba(22, 163, 154, 0.18);
-  --teal-deep:   #0C7B74;            /* teal text on light tints */
-  --teal-light:  #45D6CD;            /* teal on dark backgrounds */
+  /* Dark sections (deep navy family) */
+  --obsidian:      #0E1018;
+  --midnight:      #141A2B;
+  --deep-sea:      #1A2336;
+  --royal:         #1C2A49;   /* refined navy: primary buttons / icons */
+  --obsidian-soft: #1A1C24;
+  --obsidian-line: #2A2D38;
 
-  /* Derived tones */
-  --obsidian-soft: #131313;
-  --obsidian-line: #232323;
-  --ivory-dim:     rgba(254, 249, 242, 0.62);
-  --ivory-faint:   rgba(254, 249, 242, 0.34);
-  --ink-dim:       rgba(16, 22, 33, 0.66);
-  --ink-faint:     rgba(16, 22, 33, 0.10);
+  /* Warm-white text on dark */
+  --ivory:       #F4F0E8;
+  --ivory-dim:   rgba(244, 240, 232, 0.66);
+  --ivory-faint: rgba(244, 240, 232, 0.40);
+  --pure-white:  #FFFFFF;
 
-  /* Light theme surfaces */
-  --paper:   #F4F6F9;   /* page background */
-  --surface: #FFFFFF;   /* cards */
-  --line:    #E3E8EF;   /* light borders */
-  --ink:     #14181F;   /* primary text on light */
-  --ink-mute: rgba(16, 22, 33, 0.45);
-  --paper-2: #EAEEF4;   /* alternate light section (cool, matches paper) */
+  /* Accents: refined red (primary action) + bronze (labels, detail).
+     The 'teal' tokens are repurposed as bronze so existing components inherit it. */
+  --red:        #A81D33;
+  --red-soft:   rgba(168, 29, 51, 0.10);
+  --teal:       #9A7B4F;   /* bronze */
+  --teal-soft:  rgba(154, 123, 79, 0.13);
+  --teal-deep:  #7A6038;
+  --teal-light: #C7A86C;
+
+  /* Type */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   --maxw: 1180px;
   --gutter: clamp(1.25rem, 5vw, 4rem);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-body);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -54,18 +59,12 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; overflow-x:
 
 body {
   background-color: var(--paper);
-  /* soft gradient-mesh blobs + a faint blueprint dot grid so sections are never dead-flat */
-  background-image:
-    radial-gradient(42rem 34rem at 100% -6%, rgba(16,46,128,0.07), transparent 60%),
-    radial-gradient(38rem 32rem at -8% 18%, rgba(200,16,46,0.045), transparent 60%),
-    radial-gradient(40rem 36rem at 50% 118%, rgba(22,163,154,0.06), transparent 60%),
-    radial-gradient(rgba(16,46,128,0.05) 1px, transparent 1.6px);
-  background-size: auto, auto, auto, 24px 24px;
-  background-attachment: fixed, fixed, fixed, scroll;
   color: var(--ink);
+  font-family: var(--font-body);
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.65;
   font-size: 16px;
+  -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
@@ -86,12 +85,17 @@ img { max-width: 100%; }
 }
 
 /* ----------------------------------------------------------- Typography */
-h1, h2, h3, h4 { font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; }
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500; line-height: 1.1; letter-spacing: -0.015em;
+}
+h3, h4 { font-weight: 600; }
 
 .eyebrow {
-  font-size: 0.72rem;
+  font-family: var(--font-body);
+  font-size: 0.74rem;
   font-weight: 600;
-  letter-spacing: 0.34em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--teal);
 }
@@ -103,22 +107,10 @@ a { color: inherit; text-decoration: none; }
 .wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--gutter); }
 
 .section { padding-block: clamp(4.5rem, 11vw, 9rem); }
-.section--light {
-  background-color: var(--paper-2); color: var(--ink);
-  background-image: radial-gradient(rgba(16,46,128,0.05) 1px, transparent 1.6px);
-  background-size: 24px 24px;
-}
-.section--white {
-  background-color: var(--surface); color: var(--ink);
-  background-image: radial-gradient(rgba(16,46,128,0.035) 1px, transparent 1.6px);
-  background-size: 24px 24px;
-}
+.section--light { background-color: var(--paper-2); color: var(--ink); }
+.section--white { background-color: var(--surface); color: var(--ink); }
 .section--navy {
-  background:
-    radial-gradient(60% 80% at 88% -10%, rgba(43,81,200,0.5), transparent 55%),
-    radial-gradient(52% 60% at -5% 112%, rgba(22,163,154,0.20), transparent 55%),
-    radial-gradient(40% 50% at 50% 50%, rgba(200,16,46,0.06), transparent 60%),
-    var(--midnight);
+  background: linear-gradient(180deg, #182135 0%, var(--midnight) 100%);
   color: var(--ivory);
 }
 .section--navy .eyebrow { color: var(--teal-light); }
@@ -244,11 +236,11 @@ body.dark-hero .site-header:not(.scrolled):not(.menu-open) .nav-toggle span { ba
 }
 .hero__inner { position: relative; z-index: 1; max-width: 54rem; }
 .hero h1 {
-  font-size: clamp(2.6rem, 8vw, 6rem);
-  font-weight: 800; letter-spacing: -0.035em; line-height: 0.98;
+  font-size: clamp(2.8rem, 8vw, 5.8rem);
+  font-weight: 500; letter-spacing: -0.02em; line-height: 1.02;
   color: var(--ivory);
 }
-.hero h1 .accent { color: var(--ivory); display: block; }
+.hero h1 .accent { color: var(--ivory); display: block; font-style: italic; font-weight: 400; }
 .hero .eyebrow { color: rgba(254, 249, 242, 0.9); }
 .hero__inner { text-shadow: 0 1px 18px rgba(0, 0, 0, 0.35); }
 .hero__tag {
@@ -313,12 +305,12 @@ body.dark-hero .site-header:not(.scrolled):not(.menu-open) .nav-toggle span { ba
 
 /* --------------------------------------------------------------- CTA band */
 .cta-band { text-align: center; }
-.cta-band h2 { font-size: clamp(2rem, 6vw, 4rem); font-weight: 800; letter-spacing: -0.03em; }
+.cta-band h2 { font-size: clamp(2rem, 5.5vw, 3.6rem); font-weight: 500; letter-spacing: -0.015em; }
 .cta-band p { color: var(--ink-dim); margin: 1.2rem auto 2.2rem; max-width: 32rem; }
 
 /* ----------------------------------------------------------- About page */
 .page-hero { padding-top: clamp(8rem, 16vw, 12rem); padding-bottom: clamp(3rem, 7vw, 5rem); }
-.page-hero h1 { font-size: clamp(2.6rem, 8vw, 5.5rem); font-weight: 800; }
+.page-hero h1 { font-size: clamp(2.6rem, 7vw, 5rem); font-weight: 500; letter-spacing: -0.018em; }
 .page-hero p { margin-top: 1.4rem; color: var(--ivory-dim); max-width: 40rem; font-size: 1.1rem; font-weight: 300; }
 
 .split { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(2rem, 6vw, 5rem); align-items: start; }
@@ -341,13 +333,13 @@ body.dark-hero .site-header:not(.scrolled):not(.menu-open) .nav-toggle span { ba
 }
 .partner__avatar {
   width: 66px; height: 66px; border-radius: 50%; color: #fff;
-  background: linear-gradient(140deg, #2b51c8, var(--midnight));
+  background: linear-gradient(140deg, #2c3c61, var(--midnight));
   display: flex; align-items: center; justify-content: center;
   font-weight: 700; font-size: 1.25rem; letter-spacing: 0.04em; margin-bottom: 1.4rem;
   box-shadow: 0 12px 26px -12px rgba(16,46,128,0.55);
 }
 .partner:nth-child(2) .partner__avatar {
-  background: linear-gradient(140deg, #1fbeb3, #0a574f);
+  background: linear-gradient(140deg, #b48b52, #6d5230);
   box-shadow: 0 12px 26px -12px rgba(22,163,154,0.5);
 }
 .partner h4 { font-size: 1.2rem; }
@@ -366,7 +358,7 @@ body.dark-hero .site-header:not(.scrolled):not(.menu-open) .nav-toggle span { ba
 .sector { display: grid; grid-template-columns: 0.4fr 0.6fr; gap: clamp(1.5rem, 5vw, 4rem); padding-block: clamp(3rem, 6vw, 5rem); border-top: 1px solid var(--obsidian-line); }
 .sector:first-of-type { border-top: 0; }
 .sector__index { display: flex; align-items: baseline; gap: 1rem; }
-.sector__index .n { font-size: clamp(3rem, 8vw, 6rem); font-weight: 800; color: var(--red); line-height: 0.8; letter-spacing: -0.04em; }
+.sector__index .n { font-family: var(--font-display); font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 400; color: var(--teal); line-height: 0.8; letter-spacing: -0.02em; font-style: italic; }
 .sector__index h2 { font-size: clamp(1.6rem, 4vw, 2.6rem); }
 .sector__body p { color: var(--ivory-dim); }
 .sector__body p + p { margin-top: 1rem; }
@@ -849,7 +841,7 @@ body.dark-hero .site-header:not(.scrolled):not(.menu-open) .nav-toggle span { ba
 /* big statement variant */
 .imgband--statement { text-align: center; }
 .imgband__statement {
-  font-size: clamp(2rem, 5.5vw, 4rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05;
+  font-size: clamp(2rem, 5.5vw, 3.8rem); font-weight: 500; letter-spacing: -0.015em; line-height: 1.08;
   margin-top: 0.8rem;
 }
 
