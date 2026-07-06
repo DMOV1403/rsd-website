@@ -5,59 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RSD | About</title>
   <meta name="description" content="The story behind RSD, an Omani venture company. Our name, our vision and mission, what we value, the founders, and where we operate.">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="assets/rsd-logo-ivory.png">
+  <link rel="stylesheet" href="home.css">
+  <link rel="icon" href="assets/rsd-logo-dark.png">
 </head>
-<body class="dark-hero">
+<body>
 
+  <!-- HEADER -->
   <header class="site-header">
     <a href="index.html" class="brand" aria-label="RSD home">
-      <img class="brand__light" src="assets/rsd-logo-ivory.png" alt="RSD, Where Vision Builds"><img class="brand__dark" src="assets/rsd-logo-dark.png" alt="RSD, Where Vision Builds">
+      <img src="assets/rsd-logo-dark.png" alt="RSD, Where Vision Builds">
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="index.html">Home</a>
-      <a href="about.html" aria-current="page">About</a>
+      <a href="about.html" aria-current="page">About Us</a>
       <a href="what-we-do.html">What We Do</a>
       <a href="projects.html">Projects</a>
-      <a href="contact.html" class="btn">Contact</a>
+      <a href="what-we-do.html#industrial-technology">Industries</a>
+      <a href="contact.html" class="btn btn--primary">Get in Touch</a>
     </nav>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </header>
 
   <!-- PAGE HERO -->
-  <section class="section page-hero page-hero--img">
-    <div class="page-hero__bg" style="background-image:url('assets/desert.jpg')"></div>
+  <section class="phero">
+    <div class="phero__media"><img src="assets/desert.jpg" alt="The Omani landscape" loading="eager" decoding="async"></div>
     <div class="wrap">
       <p class="eyebrow reveal in">About RSD</p>
-      <h1 class="reveal in" data-delay="1">A company built to look further ahead.</h1>
+      <h1 class="reveal in" data-delay="1">A company built to look <span class="accent">further ahead.</span></h1>
       <p class="reveal in" data-delay="2">We say what we mean and let the work carry the rest. Here is who we are, why we exist, and where we operate.</p>
     </div>
   </section>
 
   <!-- FOUNDING STORY -->
-  <section class="section section--light">
-    <div class="wrap about-teaser">
-      <div class="about-media reveal">
-        <div class="ph" style="aspect-ratio:4/5">
-          <img src="assets/about.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
-          <span class="ph__label">About photo</span>
+  <section class="section section--card">
+    <div class="wrap split-2">
+      <div class="reveal">
+        <div class="media-frame">
+          <img src="assets/surveyors.jpg" alt="RSD team surveying a resource site in Oman" loading="lazy" decoding="async">
         </div>
       </div>
       <div class="reveal" data-delay="1">
-        <p class="eyebrow">Our story</p>
+        <p class="kicker">Our Story</p>
         <h2>Where it began</h2>
-        <p class="body" style="margin-top:1rem">RSD started with a simple conviction: that Oman's natural wealth is worth far more when it is developed with foresight and connected to the world with intent. Rather than treat resources, capital and industry as separate trades, we built one company to carry all three.</p>
-        <p class="body" style="margin-top:1rem">The name holds that idea. RSD comes from Rasad, the old Arabic word for watching the sky and reading what is coming. It is the word Arab astronomers used. It still describes how we work: observe closely, then act with precision.</p>
+        <p class="body">RSD started with a simple conviction: that Oman's natural wealth is worth far more when it is developed with foresight and connected to the world with intent. Rather than treat resources, capital and industry as separate trades, we built one company to carry all three.</p>
+        <p class="body">The name holds that idea. RSD comes from <em>Rasad</em>, the old Arabic word for watching the sky and reading what is coming — the word Arab astronomers used. It still describes how we work: observe closely, then act with precision.</p>
       </div>
     </div>
   </section>
 
   <!-- VISION & MISSION -->
-  <section class="section section--navy">
+  <section class="section section--bone">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow reveal">Vision &amp; Mission</p>
-        <h2 class="reveal" data-delay="1" style="color:var(--ivory)">What drives us</h2>
+      <div class="section-head reveal">
+        <p class="kicker">Vision &amp; Mission</p>
+        <h2>What drives us</h2>
       </div>
       <div class="vm-grid">
         <div class="vm-card reveal" data-delay="1">
@@ -68,18 +69,18 @@
         <div class="vm-card reveal" data-delay="2">
           <div class="vm-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg></div>
           <h3>Our mission</h3>
-          <p>To develop resources, structure investment and apply technology with foresight and care, for our partners, our country and the long term.</p>
+          <p>To develop resources, structure investment and apply technology with foresight and care — for our partners, our country and the long term.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CORE VALUES -->
-  <section class="section section--light">
+  <section class="section section--card">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow eyebrow--ink reveal">What we value</p>
-        <h2 class="reveal" data-delay="1">Four things we hold to</h2>
+      <div class="section-head reveal">
+        <p class="kicker">What We Value</p>
+        <h2>Four things we hold to</h2>
       </div>
       <div class="values">
         <div class="value reveal" data-delay="1">
@@ -90,9 +91,9 @@
           <div class="value__ic ic-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div>
           <h4>Precision</h4><p>Accurate and grounded. We name things plainly, with no guesswork and no overstatement.</p>
         </div>
-        <div class="value value--teal reveal" data-delay="3">
-          <div class="value__ic ic-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.5a3 3 0 0 1 0 5"/><path d="M21 20a6 6 0 0 0-5-5.9"/></svg></div>
-          <h4>Partnership</h4><p>We are mindful of the partners, regulators and regions we work with, and we never treat a relationship as a transaction.</p>
+        <div class="value reveal" data-delay="3">
+          <div class="value__ic ic-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.5a3 3 0 0 1 0 5"/><path d="M21 20a6 6 0 0 0-5-5.9"/></svg></div>
+          <h4>Partnership</h4><p>We are mindful of the partners, regulators and regions we work with, and never treat a relationship as a transaction.</p>
         </div>
         <div class="value reveal" data-delay="4">
           <div class="value__ic ic-navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4 3 7 7 8 4-1 7-4 7-8V6l-7-3Z"/></svg></div>
@@ -102,12 +103,12 @@
     </div>
   </section>
 
-  <!-- FOUNDING PARTNERS -->
-  <section class="section">
+  <!-- FOUNDERS -->
+  <section class="section section--bone">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow reveal">Founders</p>
-        <h2 class="reveal" data-delay="1">The people behind RSD</h2>
+      <div class="section-head reveal">
+        <p class="kicker">Founders</p>
+        <h2>The people behind RSD</h2>
       </div>
       <div class="partners">
         <div class="partner reveal" data-delay="1">
@@ -125,20 +126,33 @@
   </section>
 
   <!-- REGIONS -->
-  <section class="section section--white">
-    <div class="wrap split">
+  <section class="section section--card">
+    <div class="wrap split-2">
       <div class="reveal">
-        <p class="eyebrow eyebrow--ink reveal">Where we operate</p>
+        <p class="kicker">Where We Operate</p>
+        <h2>Rooted in Oman,<br>reaching the world</h2>
       </div>
       <div class="reveal" data-delay="1">
-        <h2>Where we operate</h2>
-        <p class="body" style="margin-top:1rem">[ Placeholder: short summary of RSD's regions of operation. ]</p>
+        <p class="body">Our base is in Duqm, on Oman's Arabian Sea coast — close to the resources we develop and the deep-water port that moves them. From there we connect to buyers across Asia and investors across Europe.</p>
         <div class="regions">
-          <span class="region-chip">[ Region ]</span>
-          <span class="region-chip">[ Region ]</span>
-          <span class="region-chip">[ Region ]</span>
+          <span class="region-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Duqm, Oman</span>
+          <span class="region-chip">India</span>
+          <span class="region-chip">Philippines</span>
+          <span class="region-chip">Asia</span>
+          <span class="region-chip">Europe</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta">
+    <div class="cta__bg" style="background-image:url('assets/dunes.jpg')"></div>
+    <div class="wrap cta__inner reveal">
+      <p class="kicker kicker--light">Get in Touch</p>
+      <h2>Let's build something that lasts.</h2>
+      <p>Whether you are a buyer, an investor or a partner, we would be glad to talk.</p>
+      <a href="contact.html" class="btn btn--primary">Contact RSD</a>
     </div>
   </section>
 
@@ -147,7 +161,7 @@
     <div class="wrap">
       <div class="footer-top">
         <div>
-          <img src="assets/rsd-logo-ivory.png" alt="RSD" width="120" height="58" loading="lazy" decoding="async">
+          <img src="assets/rsd-logo-ivory.png" alt="RSD">
           <p>Where vision builds. An Omani venture company connecting the country's natural resources with the world.</p>
         </div>
         <div class="footer-col">
@@ -171,6 +185,6 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>

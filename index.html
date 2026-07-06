@@ -5,199 +5,220 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RSD | Where Vision Builds</title>
   <meta name="description" content="RSD is an Omani venture company connecting the country's natural resources with international buyers and investors across mining, investment and industrial technology.">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="assets/rsd-logo-ivory.png">
+  <link rel="stylesheet" href="home.css">
+  <link rel="icon" href="assets/rsd-logo-dark.png">
 </head>
-<body class="dark-hero">
+<body>
 
+  <!-- HEADER -->
   <header class="site-header">
     <a href="index.html" class="brand" aria-label="RSD home">
-      <img class="brand__light" src="assets/rsd-logo-ivory.png" alt="RSD, Where Vision Builds"><img class="brand__dark" src="assets/rsd-logo-dark.png" alt="RSD, Where Vision Builds">
+      <img src="assets/rsd-logo-dark.png" alt="RSD, Where Vision Builds">
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="index.html" aria-current="page">Home</a>
-      <a href="about.html">About</a>
+      <a href="about.html">About Us</a>
       <a href="what-we-do.html">What We Do</a>
       <a href="projects.html">Projects</a>
-      <a href="contact.html" class="btn">Contact</a>
+      <a href="what-we-do.html#industrial-technology">Industries</a>
+      <a href="contact.html" class="btn btn--primary">Get in Touch</a>
     </nav>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero__bg"></div>
-    <div class="wrap hero__inner">
-      <p class="eyebrow">RSD</p>
-      <h1>Where vision<span class="accent">builds.</span></h1>
-      <p class="hero__tag">We are an Omani venture company turning the country's natural resources into industry the world relies on. We watch the horizon, then build toward it.</p>
-      <div class="hero__cta">
-        <a href="what-we-do.html" class="btn">What we do</a>
-        <a href="contact.html" class="btn btn--ghost">Get in touch</a>
+    <div class="hero__media">
+      <img src="assets/hero.jpg" alt="Aerial view of Duqm Port, Oman" loading="eager" decoding="async">
+    </div>
+    <div class="wrap">
+      <div class="hero__copy">
+        <p class="eyebrow">RSD</p>
+        <h1>Where Vision<span class="accent">Builds.</span></h1>
+        <p class="hero__tag">We are an Omani venture company turning the country's natural resources into industry the world relies on. We watch the horizon, then build toward it.</p>
+        <div class="hero__cta">
+          <a href="what-we-do.html" class="btn btn--primary">What We Do</a>
+          <a href="contact.html" class="btn btn--ghost"><span class="play"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span> Get in Touch</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS BAR -->
+    <div class="wrap stats">
+      <div class="stats__card">
+        <div class="stat reveal" data-delay="1">
+          <span class="stat__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l3 6-9 12L3 9l3-6Z"/><path d="M3 9h18M9 3 7 9l5 12 5-12-2-6"/></svg></span>
+          <span class="stat__txt"><b>3</b><span>Core Sectors</span></span>
+        </div>
+        <div class="stat reveal" data-delay="2">
+          <span class="stat__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7.5 12 3 3 7.5v9L12 21l9-4.5v-9Z"/><path d="m3 7.5 9 4.5 9-4.5"/><path d="M12 21v-9"/></svg></span>
+          <span class="stat__txt"><b>Gypsum</b><span>Lead Resource</span></span>
+        </div>
+        <div class="stat reveal" data-delay="3">
+          <span class="stat__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <span class="stat__txt"><b>Duqm</b><span>Oman Base</span></span>
+        </div>
+        <div class="stat reveal" data-delay="4">
+          <span class="stat__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/></svg></span>
+          <span class="stat__txt"><b>Asia + EU</b><span>Markets Served</span></span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- POSITIONING BAR -->
-  <section class="wrap stats-bar">
-    <div class="stats-bar__inner">
-      <div class="stat reveal" data-delay="1">
-        <span class="stat__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-        <span class="stat__txt"><b>Duqm</b><span>Oman base</span></span>
-      </div>
-      <div class="stat reveal" data-delay="2">
-        <span class="stat__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7.5 12 3 3 7.5v9L12 21l9-4.5v-9Z"/><path d="m3 7.5 9 4.5 9-4.5"/><path d="M12 21v-9"/></svg></span>
-        <span class="stat__txt"><b>Gypsum</b><span>Lead resource</span></span>
-      </div>
-      <div class="stat reveal" data-delay="3">
-        <span class="stat__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/></svg></span>
-        <span class="stat__txt"><b>Asia</b><span>Export markets</span></span>
-      </div>
-      <div class="stat reveal" data-delay="4">
-        <span class="stat__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.5a3 3 0 0 1 0 5"/><path d="M21 20a6 6 0 0 0-5-5.9"/></svg></span>
-        <span class="stat__txt"><b>Europe</b><span>Investor reach</span></span>
-      </div>
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Mining</span><i>&#9670;</i><span>Investment</span><i>&#9670;</i><span>Industrial Technology</span><i>&#9670;</i><span>Gypsum</span><i>&#9670;</i><span>Duqm, Oman</span><i>&#9670;</i><span>Ports &amp; Logistics</span><i>&#9670;</i><span>Data Infrastructure</span><i>&#9670;</i><span>Where Vision Builds</span><i>&#9670;</i><span>Mining</span><i>&#9670;</i><span>Investment</span><i>&#9670;</i><span>Industrial Technology</span><i>&#9670;</i><span>Gypsum</span><i>&#9670;</i><span>Duqm, Oman</span><i>&#9670;</i><span>Ports &amp; Logistics</span><i>&#9670;</i><span>Data Infrastructure</span><i>&#9670;</i><span>Where Vision Builds</span><i>&#9670;</i>
     </div>
-  </section>
+  </div>
 
   <!-- WHAT WE DO -->
   <section class="section">
     <div class="wrap">
       <div class="lead-row">
         <div class="reveal">
-          <p class="eyebrow">What we do</p>
-          <h2 class="lead-row__title">Three sectors,<br><span class="accent2">one company.</span></h2>
+          <p class="kicker">What We Do</p>
+          <h2>Solutions that<br>Drive <span class="accent">Real Impact</span></h2>
         </div>
         <div class="lead-row__aside reveal" data-delay="1">
-          <p>RSD connects Oman's resources with the buyers, investors and partners who need them. We look closely, plan with care, and build things meant to last.</p>
-          <a href="what-we-do.html" class="textlink">Explore what we do <span>&rarr;</span></a>
+          <p>From resource to market, we provide end-to-end capability tailored to long-term value — connecting Oman's resources with the buyers, investors and partners who need them.</p>
+          <a href="what-we-do.html" class="textlink">Explore What We Do <span>&rarr;</span></a>
         </div>
       </div>
+
       <div class="scards">
         <a href="what-we-do.html#mining" class="scard reveal" data-delay="1">
-          <div class="scard__body">
-            <div class="scard__icon ic-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l3 6-9 12L3 9l3-6Z"/><path d="M3 9h18M9 3 7 9l5 12 5-12-2-6"/></svg></div>
-            <h3>Mining</h3>
-            <p>Omani natural resources, led by gypsum. We develop and supply minerals to industrial buyers in India, the Philippines and beyond.</p>
-            <span class="scard__more">Learn more <span>&rarr;</span></span>
-          </div>
+          <div class="scard__icon ic-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l3 6-9 12L3 9l3-6Z"/><path d="M3 9h18M9 3 7 9l5 12 5-12-2-6"/></svg></div>
+          <h3>Mining</h3>
+          <p>Omani natural resources, led by gypsum — developed and supplied to industrial buyers across Asia and beyond.</p>
+          <span class="textlink">Learn More <span>&rarr;</span></span>
         </a>
         <a href="what-we-do.html#investment" class="scard reveal" data-delay="2">
-          <div class="scard__body">
-            <div class="scard__icon ic-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg></div>
-            <h3>Investment</h3>
-            <p>We structure the capital and partnerships that bring international investors into large scale opportunity in Oman.</p>
-            <span class="scard__more">Learn more <span>&rarr;</span></span>
-          </div>
+          <div class="scard__icon ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg></div>
+          <h3>Investment</h3>
+          <p>We structure the capital and partnerships that bring international investors into large-scale opportunity in Oman.</p>
+          <span class="textlink">Learn More <span>&rarr;</span></span>
         </a>
         <a href="what-we-do.html#industrial-technology" class="scard reveal" data-delay="3">
-          <div class="scard__body">
-            <div class="scard__icon ic-navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l6 4v-4l6 4V6h6v15Z"/><path d="M3 21h18"/></svg></div>
-            <h3>Industrial Technology</h3>
-            <p>The backbone these projects run on, from ports and mineral processing to AI ready data infrastructure.</p>
-            <span class="scard__more">Learn more <span>&rarr;</span></span>
-          </div>
+          <div class="scard__icon ic-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l6 4v-4l6 4V6h6v15Z"/><path d="M3 21h18"/></svg></div>
+          <h3>Industrial Technology</h3>
+          <p>The backbone these projects run on — from ports and mineral processing to AI-ready data infrastructure.</p>
+          <span class="textlink">Learn More <span>&rarr;</span></span>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- MARQUEE -->
-  <section class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <span>Mining</span><span class="dot">&middot;</span><span>Investment</span><span class="dot">&middot;</span><span>Industrial Technology</span><span class="dot">&middot;</span><span>Gypsum</span><span class="dot">&middot;</span><span>Duqm, Oman</span><span class="dot">&middot;</span><span>Ports &amp; Logistics</span><span class="dot">&middot;</span><span>Data Infrastructure</span><span class="dot">&middot;</span><span>Where Vision Builds</span><span class="dot">&middot;</span><span>Mining</span><span class="dot">&middot;</span><span>Investment</span><span class="dot">&middot;</span><span>Industrial Technology</span><span class="dot">&middot;</span><span>Gypsum</span><span class="dot">&middot;</span><span>Duqm, Oman</span><span class="dot">&middot;</span><span>Ports &amp; Logistics</span><span class="dot">&middot;</span><span>Data Infrastructure</span><span class="dot">&middot;</span><span>Where Vision Builds</span><span class="dot">&middot;</span>
-    </div>
-  </section>
-
-  <!-- ABOUT TEASER -->
-  <section class="section section--navy">
-    <div class="wrap about-teaser">
-      <div class="about-media reveal">
-        <div class="ph">
-          <img src="assets/about.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
-          <span class="ph__label">About photo</span>
-        </div>
-      </div>
-      <div class="reveal" data-delay="1">
-        <p class="eyebrow">About RSD</p>
-        <h2 style="color:var(--ivory)">A company built to look further ahead.</h2>
-        <p style="margin-top:1rem">We connect Oman's natural resources with the world, developing them with foresight and building toward the long term. One company, carrying resources, capital and industry together.</p>
-        <ul class="checklist">
-          <li><b>Foresight</b> in every decision we make</li>
-          <li><b>Precision</b>, grounded and plainly stated</li>
-          <li><b>Partnership</b> over transactions</li>
-          <li><b>Endurance</b>, built for the long term</li>
-        </ul>
-        <a href="about.html" class="btn">More about us</a>
+        <a href="projects.html" class="scard reveal" data-delay="4">
+          <div class="scard__icon ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9 9 0 0 1 9 9"/><path d="M3 18h18"/><path d="M12 12v6"/><circle cx="12" cy="12" r="1.6"/></svg></div>
+          <h3>Ports &amp; Export</h3>
+          <p>Logistics from Duqm to global markets — turning resources into reliable, shipped-on-time supply for industry.</p>
+          <span class="textlink">Learn More <span>&rarr;</span></span>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- STATEMENT BAND -->
-  <section class="imgband imgband--statement">
-    <div class="imgband__bg" style="background-image:url('assets/project-terminal.jpg')"></div>
-    <div class="wrap reveal">
-      <p class="eyebrow">Duqm, Oman</p>
-      <h2 class="imgband__statement">From Omani ground<br>to the world's <span class="outline">industry.</span></h2>
+  <section class="band">
+    <div class="band__bg" style="background-image:url('assets/dunes.jpg')"></div>
+    <div class="wrap band__inner reveal">
+      <p class="kicker kicker--light">Duqm, Oman</p>
+      <h2 class="band__title">From Omani ground<br>to the world's <span class="accent">industry.</span></h2>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about">
+    <div class="wrap about__grid">
+      <div class="reveal">
+        <p class="kicker">About RSD</p>
+        <h2>Your Trusted Partner<br>for <span class="accent">Sustainable Growth</span></h2>
+        <p class="body">At RSD, we combine foresight, expertise and partnership to help Oman's resources unlock new opportunity and achieve long-term success — one company carrying resources, capital and industry together.</p>
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5L16 9"/></svg> Client-Centric Approach</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5L16 9"/></svg> Proven Track Record</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5L16 9"/></svg> Commitment to Excellence</li>
+        </ul>
+        <a href="about.html" class="btn btn--primary">Learn More About Us</a>
+      </div>
+      <div class="about__media reveal" data-delay="1">
+        <div class="frame">
+          <img src="assets/project-gypsum.jpg" alt="RSD gypsum quarry in Oman" loading="lazy" decoding="async">
+        </div>
+        <div class="float-card">
+          <b>15+</b>
+          <p class="ttl">Years of Foresight</p>
+          <p>Delivering value and building lasting partnerships.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- FEATURED PROJECTS -->
-  <section class="section">
+  <section class="section projects">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow reveal">Featured projects</p>
-        <h2 class="reveal" data-delay="1">What we are building</h2>
+      <div class="lead-row">
+        <div class="reveal">
+          <p class="kicker">Featured Projects</p>
+          <h2>What We Are <span class="accent">Building</span></h2>
+        </div>
+        <div class="lead-row__aside reveal" data-delay="1">
+          <p>From the gypsum fields of Duqm to ports and data infrastructure — a closer look at the projects turning Omani resources into industry the world relies on.</p>
+        </div>
       </div>
       <div class="pcards">
         <a href="projects.html" class="pcard reveal" data-delay="1">
-          <div class="ph">
-            <img src="assets/project-gypsum.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
-            <span class="ph__label">Gypsum project photo</span>
-          </div>
+          <div class="pcard__img"><img src="assets/project-gypsum.jpg" alt="Gypsum processing and export" loading="lazy" decoding="async"></div>
           <div class="pcard__body">
             <span class="pcard__sector">Mining</span>
             <h3>Gypsum Processing &amp; Export City</h3>
-            <p class="pcard__loc">Duqm, Oman</p>
+            <p class="pcard__loc"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Duqm, Oman</p>
           </div>
         </a>
         <a href="projects.html" class="pcard reveal" data-delay="2">
-          <div class="ph">
-            <img src="assets/project-terminal.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
-            <span class="ph__label">Port project photo</span>
-          </div>
+          <div class="pcard__img"><img src="assets/project-terminal.jpg" alt="Container terminal and logistics" loading="lazy" decoding="async"></div>
           <div class="pcard__body">
             <span class="pcard__sector">Industrial Technology</span>
             <h3>Container Terminal &amp; Logistics</h3>
-            <p class="pcard__loc">Duqm, Oman</p>
+            <p class="pcard__loc"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Duqm, Oman</p>
           </div>
         </a>
         <a href="projects.html" class="pcard reveal" data-delay="3">
-          <div class="ph">
-            <img src="assets/project-data.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()">
-            <span class="ph__label">Data project photo</span>
-          </div>
+          <div class="pcard__img"><img src="assets/project-data.jpg" alt="AI and data infrastructure" loading="lazy" decoding="async"></div>
           <div class="pcard__body">
             <span class="pcard__sector">Industrial Technology</span>
             <h3>AI &amp; Data Infrastructure</h3>
-            <p class="pcard__loc">Green hydrogen powered</p>
+            <p class="pcard__loc"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Green-hydrogen powered</p>
           </div>
         </a>
       </div>
-      <div style="margin-top:2.5rem">
-        <a href="projects.html" class="btn btn--ghost reveal">View all projects</a>
+      <div class="projects__cta reveal">
+        <a href="projects.html" class="btn btn--ghost">View All Projects</a>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="imgband cta-band">
-    <div class="imgband__bg" style="background-image:url('assets/hero.jpg')"></div>
+  <!-- CTA BAND -->
+  <section class="cta">
+    <div class="cta__bg" style="background-image:url('assets/project-terminal.jpg')"></div>
+    <div class="wrap cta__inner reveal">
+      <p class="kicker kicker--light">Get in Touch</p>
+      <h2>Let's build something that lasts.</h2>
+      <p>Whether you are a buyer, an investor or a partner, we would be glad to talk.</p>
+      <a href="contact.html" class="btn btn--primary">Contact RSD</a>
+    </div>
+  </section>
+
+  <!-- TRUSTED BY / MARKETS -->
+  <section class="brands">
     <div class="wrap">
-      <p class="eyebrow reveal">Get in touch</p>
-      <h2 class="reveal" data-delay="1">Let's build something that lasts.</h2>
-      <p class="reveal" data-delay="2">Whether you are a buyer, an investor or a partner, we would be glad to talk.</p>
-      <a href="contact.html" class="btn reveal" data-delay="3">Contact RSD</a>
+      <p class="brands__label">Markets &amp; partners we serve</p>
+      <div class="brands__row">
+        <span>Oman</span>
+        <span>India</span>
+        <span>Philippines</span>
+        <span>Duqm Port</span>
+        <span>Asia</span>
+        <span>Europe</span>
+      </div>
     </div>
   </section>
 
@@ -206,7 +227,7 @@
     <div class="wrap">
       <div class="footer-top">
         <div>
-          <img src="assets/rsd-logo-ivory.png" alt="RSD" width="120" height="58" loading="lazy" decoding="async">
+          <img src="assets/rsd-logo-ivory.png" alt="RSD">
           <p>Where vision builds. An Omani venture company connecting the country's natural resources with the world.</p>
         </div>
         <div class="footer-col">
@@ -230,6 +251,6 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>

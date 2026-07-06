@@ -5,37 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RSD | Projects</title>
   <meta name="description" content="RSD's work across mining, investment and industrial technology, anchored in Duqm, Oman. Filter by sector.">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="assets/rsd-logo-ivory.png">
+  <link rel="stylesheet" href="home.css">
+  <link rel="icon" href="assets/rsd-logo-dark.png">
 </head>
-<body class="dark-hero">
+<body>
 
+  <!-- HEADER -->
   <header class="site-header">
     <a href="index.html" class="brand" aria-label="RSD home">
-      <img class="brand__light" src="assets/rsd-logo-ivory.png" alt="RSD, Where Vision Builds"><img class="brand__dark" src="assets/rsd-logo-dark.png" alt="RSD, Where Vision Builds">
+      <img src="assets/rsd-logo-dark.png" alt="RSD, Where Vision Builds">
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
+      <a href="about.html">About Us</a>
       <a href="what-we-do.html">What We Do</a>
       <a href="projects.html" aria-current="page">Projects</a>
-      <a href="contact.html" class="btn">Contact</a>
+      <a href="what-we-do.html#industrial-technology">Industries</a>
+      <a href="contact.html" class="btn btn--primary">Get in Touch</a>
     </nav>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </header>
 
   <!-- PAGE HERO -->
-  <section class="section page-hero page-hero--img">
-    <div class="page-hero__bg" style="background-image:url('assets/project-terminal.jpg')"></div>
+  <section class="phero">
+    <div class="phero__media"><img src="assets/port-salalah.jpg" alt="Omani port at work" loading="eager" decoding="async"></div>
     <div class="wrap">
       <p class="eyebrow reveal in">Projects</p>
-      <h1 class="reveal in" data-delay="1">Work, named plainly.</h1>
-      <p class="reveal in" data-delay="2">What we are building and where. Filter by sector, and tap a card to read more.</p>
+      <h1 class="reveal in" data-delay="1">Work, named <span class="accent">plainly.</span></h1>
+      <p class="reveal in" data-delay="2">What we are building and where. Filter by sector to see the work across mining, investment and industrial technology.</p>
     </div>
   </section>
 
   <!-- GRID -->
-  <section class="section" style="padding-top:0">
+  <section class="section section--card">
     <div class="wrap">
       <div class="filters reveal">
         <button class="filter active" data-filter="all">All</button>
@@ -46,55 +48,78 @@
 
       <div class="project-grid">
         <article class="project reveal" data-sector="mining">
-          <div class="project__top"><span class="project__sector">Mining</span><span class="status status--tbc">[ Status ]</span></div>
-          <h3>Gypsum Processing &amp; Export City</h3>
-          <p class="project__loc">Duqm, Oman</p>
-          <p class="project__desc">Developing Omani gypsum from extraction through processing, built for export to industrial buyers in India and the Philippines.</p>
-          <span class="project__toggle">Tap to expand +</span>
+          <div class="project__img"><img src="assets/project-gypsum.jpg" alt="Gypsum processing and export" loading="lazy" decoding="async"></div>
+          <div class="project__pad">
+            <div class="project__top"><span class="project__sector">Mining</span><span class="status">In development</span></div>
+            <h3>Gypsum Processing &amp; Export City</h3>
+            <p class="project__loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Duqm, Oman</p>
+            <p class="project__desc">Developing Omani gypsum from extraction through processing, built for export to industrial buyers in India and the Philippines.</p>
+          </div>
         </article>
 
         <article class="project reveal" data-sector="mining" data-delay="1">
-          <div class="project__top"><span class="project__sector">Mining</span><span class="status status--tbc">[ Status ]</span></div>
-          <h3>Salt &amp; Precipitated Calcium Carbonate</h3>
-          <p class="project__loc">[ Location ]</p>
-          <p class="project__desc">A processing program turning Oman's mineral resources into salt and precipitated calcium carbonate.</p>
-          <span class="project__toggle">Tap to expand +</span>
+          <div class="project__img"><img src="assets/crusher.jpg" alt="Mineral processing" loading="lazy" decoding="async"></div>
+          <div class="project__pad">
+            <div class="project__top"><span class="project__sector">Mining</span><span class="status">Planned</span></div>
+            <h3>Salt &amp; Precipitated Calcium Carbonate</h3>
+            <p class="project__loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Oman</p>
+            <p class="project__desc">A processing program turning Oman's mineral resources into salt and precipitated calcium carbonate.</p>
+          </div>
         </article>
 
         <article class="project reveal" data-sector="industrial" data-delay="2">
-          <div class="project__top"><span class="project__sector">Industrial Technology</span><span class="status status--tbc">[ Status ]</span></div>
-          <h3>Container Terminal &amp; Logistics</h3>
-          <p class="project__loc">Duqm, Oman</p>
-          <p class="project__desc">Port and logistics infrastructure to move Omani industry to the world.</p>
-          <span class="project__toggle">Tap to expand +</span>
+          <div class="project__img"><img src="assets/project-terminal.jpg" alt="Container terminal and logistics" loading="lazy" decoding="async"></div>
+          <div class="project__pad">
+            <div class="project__top"><span class="project__sector">Industrial Technology</span><span class="status">In development</span></div>
+            <h3>Container Terminal &amp; Logistics</h3>
+            <p class="project__loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Duqm, Oman</p>
+            <p class="project__desc">Port and logistics infrastructure to move Omani industry to the world.</p>
+          </div>
         </article>
 
         <article class="project reveal" data-sector="industrial">
-          <div class="project__top"><span class="project__sector">Industrial Technology</span><span class="status status--tbc">[ Status ]</span></div>
-          <h3>AI &amp; Data Infrastructure</h3>
-          <p class="project__loc">[ Location ]</p>
-          <p class="project__desc">Data center infrastructure with geographic redundancy, powered by green hydrogen.</p>
-          <span class="project__toggle">Tap to expand +</span>
+          <div class="project__img"><img src="assets/project-data.jpg" alt="Data infrastructure" loading="lazy" decoding="async"></div>
+          <div class="project__pad">
+            <div class="project__top"><span class="project__sector">Industrial Technology</span><span class="status">Planned</span></div>
+            <h3>AI &amp; Data Infrastructure</h3>
+            <p class="project__loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Green-hydrogen powered</p>
+            <p class="project__desc">Data center infrastructure with geographic redundancy, powered by green hydrogen.</p>
+          </div>
         </article>
 
         <article class="project reveal" data-sector="investment" data-delay="1">
-          <div class="project__top"><span class="project__sector">Investment</span><span class="status status--tbc">[ Status ]</span></div>
-          <h3>International Investor Partnerships</h3>
-          <p class="project__loc">[ Location ]</p>
-          <p class="project__desc">Structuring the capital and relationships that connect international investors with opportunity in Oman.</p>
-          <span class="project__toggle">Tap to expand +</span>
+          <div class="project__img"><img src="assets/hero.jpg" alt="Duqm development" loading="lazy" decoding="async"></div>
+          <div class="project__pad">
+            <div class="project__top"><span class="project__sector">Investment</span><span class="status">Ongoing</span></div>
+            <h3>International Investor Partnerships</h3>
+            <p class="project__loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Oman &amp; Europe</p>
+            <p class="project__desc">Structuring the capital and relationships that connect international investors with opportunity in Oman.</p>
+          </div>
         </article>
 
         <article class="project reveal" data-sector="investment" data-delay="2">
-          <div class="project__top"><span class="project__sector">Investment</span><span class="status status--tbc">[ Status ]</span></div>
-          <h3>Mineral Export Program</h3>
-          <p class="project__loc">[ Location ]</p>
-          <p class="project__desc">Supply connecting Omani minerals with industrial buyers in India and the Philippines.</p>
-          <span class="project__toggle">Tap to expand +</span>
+          <div class="project__img"><img src="assets/openpit-mine.jpg" alt="Mineral export" loading="lazy" decoding="async"></div>
+          <div class="project__pad">
+            <div class="project__top"><span class="project__sector">Investment</span><span class="status">Ongoing</span></div>
+            <h3>Mineral Export Program</h3>
+            <p class="project__loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Asia</p>
+            <p class="project__desc">Supply connecting Omani minerals with industrial buyers in India and the Philippines.</p>
+          </div>
         </article>
       </div>
 
-      <p class="reveal" style="margin-top:2.5rem; font-size:0.85rem; color:var(--ink-mute)">Project details are indicative and will be confirmed before launch. New projects are added as they come in.</p>
+      <p class="reveal" style="margin-top:2.5rem; font-size:0.88rem; color:var(--muted)">Project details are indicative and will be confirmed before launch. New projects are added as they come in.</p>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta">
+    <div class="cta__bg" style="background-image:url('assets/dunes.jpg')"></div>
+    <div class="wrap cta__inner reveal">
+      <p class="kicker kicker--light">Get in Touch</p>
+      <h2>Want to know more?</h2>
+      <p>Tell us which project interests you and we will share the detail.</p>
+      <a href="contact.html" class="btn btn--primary">Contact RSD</a>
     </div>
   </section>
 
@@ -103,7 +128,7 @@
     <div class="wrap">
       <div class="footer-top">
         <div>
-          <img src="assets/rsd-logo-ivory.png" alt="RSD" width="120" height="58" loading="lazy" decoding="async">
+          <img src="assets/rsd-logo-ivory.png" alt="RSD">
           <p>Where vision builds. An Omani venture company connecting the country's natural resources with the world.</p>
         </div>
         <div class="footer-col">
@@ -127,6 +152,6 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
