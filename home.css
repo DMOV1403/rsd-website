@@ -136,6 +136,35 @@ em{font-family:var(--serif);font-style:italic}
 }
 .hero__cta{display:flex;gap:1rem;flex-wrap:wrap}
 
+/* ---------- hero: full photo background variant ---------- */
+.hero--photo{background:#17150E}
+.hero--photo .hero__media img{object-position:center}
+.hero--photo .hero__media::after{
+  background:
+    linear-gradient(90deg, rgba(23,21,14,.88) 0%, rgba(23,21,14,.6) 44%, rgba(23,21,14,.22) 100%),
+    linear-gradient(180deg, rgba(23,21,14,.6) 0%, rgba(23,21,14,0) 32%),
+    linear-gradient(0deg, rgba(23,21,14,.55) 0%, rgba(23,21,14,0) 34%);
+}
+.hero--photo h1{color:#F3EFE6}
+.hero--photo h1 .accent{color:#e8c0c5}
+.hero--photo .eyebrow{color:#e8c0c5}
+.hero--photo .eyebrow::before{background:#e8c0c5}
+.hero--photo .hero__tag{color:rgba(243,239,230,.88);border-left-color:#e8c0c5}
+.hero--photo .btn--ghost{color:#F3EFE6;border-color:#F3EFE6}
+.hero--photo .btn--ghost:hover{background:#F3EFE6;color:var(--ink)}
+
+/* adaptive header over the dark hero (until scrolled) */
+.brand__light{display:none}
+.hero-dark .site-header:not(.scrolled) .brand__dark{display:none}
+.hero-dark .site-header:not(.scrolled) .brand__light{display:block}
+.hero-dark .site-header:not(.scrolled) .nav a:not(.btn){color:rgba(243,239,230,.92)}
+.hero-dark .site-header:not(.scrolled) .nav a:not(.btn):hover,
+.hero-dark .site-header:not(.scrolled) .nav a[aria-current="page"]:not(.btn){color:#e8c0c5}
+.hero-dark .site-header:not(.scrolled) .nav a:not(.btn)::after{background:#e8c0c5}
+.hero-dark .site-header:not(.scrolled) .nav-toggle span{background:#F3EFE6}
+/* mobile menu panel stays readable regardless */
+.hero-dark .site-header:not(.scrolled) .nav.open a:not(.btn){color:var(--ink-2)}
+
 /* ---------- stats bar ---------- */
 .stats{position:relative;z-index:20;margin-top:64px}
 .stats__card{
@@ -561,4 +590,12 @@ em{font-family:var(--serif);font-style:italic}
   .hero__cta{flex-direction:column}
   .hero__cta .btn{width:100%}
   .hero__media{height:240px}
+}
+
+/* photo-background hero keeps the full-bleed dark treatment on phones */
+@media(max-width:760px){
+  .hero--photo{display:block;padding:126px 0 70px}
+  .hero--photo .hero__media{position:absolute;inset:0;width:auto;height:auto;margin:0;border:0}
+  .hero--photo .hero__media::after{display:block}
+  .hero--photo .stats{margin-top:52px}
 }
