@@ -60,7 +60,7 @@
       var email = form.querySelector('#email').value.trim();
       var message = form.querySelector('#message').value.trim();
       var subject = 'Website enquiry from ' + name + (company ? ' (' + company + ')' : '');
-      var body = message + '\n\n— ' + name + (company ? ', ' + company : '') + '\n' + email;
+      var body = message + '\n\n' + name + (company ? ', ' + company : '') + '\n' + email;
       var note = form.querySelector('.form-note');
       if (note) {
         note.style.color = 'var(--teal)';
