@@ -1,6 +1,9 @@
 Options -MultiViews
 RewriteEngine On
 
+# Google Search Console verification file: serve as-is, no rewrites
+RewriteRule ^google[0-9a-f]+\.html$ - [L]
+
 # /index.html or /index  ->  /
 RewriteCond %{THE_REQUEST} \s/+index(\.html)?[\s?] [NC]
 RewriteRule ^ / [R=301,L]
