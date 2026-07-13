@@ -106,8 +106,9 @@ em{font-family:var(--serif);font-style:italic}
   content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--teal);transition:width .3s;
 }
 .nav a:not(.btn):hover::after,.nav a[aria-current="page"]:not(.btn)::after{width:100%}
-.nav a:hover,.nav a[aria-current="page"]{color:var(--teal)}
+.nav a:not(.btn):hover,.nav a[aria-current="page"]:not(.btn){color:var(--teal)}
 .nav .btn{margin-left:.6rem;padding:.8rem 1.5rem}
+.nav a.btn--primary{color:#fff}
 .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px;z-index:70}
 .nav-toggle span{width:26px;height:2px;background:var(--ink);transition:.3s}
 

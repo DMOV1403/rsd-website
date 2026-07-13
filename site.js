@@ -50,17 +50,24 @@
     });
   }
 
-  // --- contact form (no backend: friendly confirmation) ---
+  // --- contact form (no backend: hand off to the visitor's email app) ---
   var form = document.querySelector('.contact-form');
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      var name = form.querySelector('#name').value.trim();
+      var company = form.querySelector('#company').value.trim();
+      var email = form.querySelector('#email').value.trim();
+      var message = form.querySelector('#message').value.trim();
+      var subject = 'Website enquiry from ' + name + (company ? ' (' + company + ')' : '');
+      var body = message + '\n\n— ' + name + (company ? ', ' + company : '') + '\n' + email;
       var note = form.querySelector('.form-note');
       if (note) {
         note.style.color = 'var(--teal)';
-        note.textContent = 'Thank you — your message has been noted. We will get back to you.';
+        note.textContent = 'Opening your email app to send the message…';
       }
-      form.reset();
+      window.location.href = 'mailto:hello@rsd.services?subject=' +
+        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     });
   }
 })();
